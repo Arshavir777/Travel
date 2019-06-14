@@ -6,12 +6,12 @@ const port = (process.env.PORT || 5000)
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views')
 
+var publicDir = require('path').join(__dirname,'/public');
+app.use(express.static(publicDir));
 
-
-app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index.ejs',{
-        text:'HEROUKO'
+        text:'Welcome to my Page'
     })
 })
 
