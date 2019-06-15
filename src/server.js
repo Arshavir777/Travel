@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 const app = express()
 const port = (process.env.PORT || 5000)
-const uri = "mongodb+srv://arshavir:9mywhJTYX48nVVk@cluster0-lokck.mongodb.net/test?retryWrites=true&w=majority";
+const uri = (process.env.MONGO_URL);
 
 const Mclient = new MongoClient(uri, { 
     useNewUrlParser: true,
