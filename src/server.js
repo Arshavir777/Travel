@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 const app = express()
 const port = (process.env.PORT || 5000)
-const uri = (process.env.MONGO_URL || "mongodb+srv://arshavir:9mywhJTYX48nVVk@cluster0-lokck.mongodb.net/test?retryWrites=true&w=majority");
+const uri = process.env.MONGO_URL 
 
 const Mclient = new MongoClient(uri, { 
     useNewUrlParser: true,
@@ -40,7 +40,8 @@ app.get('/', (req, res) => {
         }
         res.render('index.ejs',{
             name: response !== null?response.name:'Not Found!!',
-            value: req.query.email
+            value: req.query.email,
+            ip: ip.address()
         })
     })
  
