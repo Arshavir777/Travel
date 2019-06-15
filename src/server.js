@@ -14,7 +14,7 @@ const Mclient = new MongoClient(uri, {
  });
 Mclient.connect((err, client) => {
     if(err){
-        console.log("ERROR MONGO DB !!!")
+        console.log(err.message)
     }else{
          app.locals.db = client.db("test")
          app.listen(port, () => console.log(`Example app listening on port ${port}!`))
