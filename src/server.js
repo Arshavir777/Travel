@@ -8,21 +8,21 @@ const app = express()
 const port = (process.env.PORT || 5000)
 const uri = (process.env.MONGO_URL || "mongodb+srv://arshavir:9mywhJTYX48nVVk@cluster0-lokck.mongodb.net/test?retryWrites=true&w=majority");
 
-// const Mclient = new MongoClient(uri, { 
-//     useNewUrlParser: true,
-//     reconnectTries: Number.MAX_VALUE,
-//     reconnectInterval: 1000
-//  });
-// Mclient.connect((err, client) => {
-//     if(err){
-//         console.log(err.message)
-//     }else{
-//          app.locals.db = client.db("test")
-//          app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-//     }
+const Mclient = new MongoClient(uri, { 
+    useNewUrlParser: true,
+    reconnectTries: Number.MAX_VALUE,
+    reconnectInterval: 1000
+ });
+Mclient.connect((err, client) => {
+    if(err){
+        console.log(err.message)
+    }else{
+         app.locals.db = client.db("test")
+         app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+    }
     
-// });
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+});
+
 
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views')
@@ -33,15 +33,15 @@ app.use(express.static(publicDir));
 
 
 app.get('/', (req, res) => {
-    // const collection = app.locals.db.collection('user')
-    // collection.findOne({email:req.query.email}, (error, response) => {
-    //     if(error){
-    //         console.log(error)
-    //     }
+    const collection = app.locals.db.collection('user')
+    collection.findOne({email:req.query.email}, (error, response) => {
+        if(error){
+            console.log(error)
+        }
         res.render('index.ejs',{
-            name: ip.address(),
-            value: 78
+            name: response !== null?response.name:'Not Found!!',
+            value: req.query.email
         })
-    //})
+    })
  
 })
