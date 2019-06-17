@@ -34,7 +34,12 @@ app.use(express.static(publicDir));
 
 
 app.get('/', (req, res) => {
-    let lng = req.headers.cookie.split('=')[1]
+    if(req.headers.cookie){
+        let lng = req.headers.cookie.split('=')[1]
+    }else{
+        let lng = 'am'
+    }
+    
     res.setLocale(lng)
     app.locals.lng = lng
     res.render('index.ejs')
