@@ -1,11 +1,29 @@
 import express from 'express'
+import path from 'path'
 import ip from 'ip'
 import i18n from 'i18n'
-import ejs from './i18n'
-const MongoClient = require('mongodb').MongoClient;
+import cookieParser from 'cookie-parser'
+import './i18n'
 
+// const MongoClient = require('mongodb').MongoClient;
+var tourRouter = require( './routes/tours')
 const app = express()
 const port = (process.env.PORT || 3000)
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser())
+app.use(i18n.init)
+app.use(function (req, res, next) {
+    res.setLocale(req.cookies.lng || 'am')
+    res.locals = {
+      lng: req.cookies.lng || 'am'
+    };
+    next();
+ });
+app.use('/tour', tourRouter)
+
+app.set("view engine", "ejs")
+app.set('views', __dirname + '/views')
+
 // const uri = process.env.MONGO_URL 
 
 // const Mclient = new MongoClient(uri, { 
@@ -23,37 +41,5 @@ const port = (process.env.PORT || 3000)
     
 // });
 
+app.get('/', (req, res) => {res.render('index.ejs')})
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-app.set("view engine", "ejs");
-app.set('views', __dirname + '/views')
-app.use(i18n.init)
-
-
-var publicDir = require('path').join(__dirname,'/public');
-app.use(express.static(publicDir));
-
-
-app.get('/', (req, res) => {
-    if(req.headers.cookie){
-        var lng = req.headers.cookie.split('=')[1]
-    }else{
-        var lng = 'am'
-    }
-    
-    res.setLocale(lng)
-    app.locals.lng = lng
-    res.render('index.ejs')
-  
-    // const collection = app.locals.db.collection('user')
-    // collection.findOne({email:req.query.email}, (error, response) => {
-    //     if(error){
-    //         console.log(error)
-    //     }
-    //     res.render('index.ejs',{
-    //         name: response !== null?response.name:'Not Found!!',
-    //         value: req.query.email,
-    //         ip: ip.address()
-    //     })
-    // })
- 
-})

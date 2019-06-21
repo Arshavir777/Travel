@@ -302,11 +302,9 @@
 	});
 //HEADER JS
 //CHANGE LANGUAGE 
-	$('#lang').change( function (e) {
-		e.preventDefault
+	$('#lang').on('change', function (e) {
 		let lang = $(this).val()
-		console.log(lang)
-		document.cookie = `lang=${lang}`
+		document.cookie = `lng=${lang}`
 		location.reload()
 	})
 
