@@ -302,11 +302,13 @@
 	});
 //HEADER JS
 //CHANGE LANGUAGE 
-	$('#lang').on('change', function (e) {
-		let lang = $(this).val()
+	$('.language').on('click', function (e) {
+		let lang = $(this).attr('lng')
 		document.cookie = `lng=${lang}`
 		location.reload()
 	})
+
+	$('#myModal').modal('show')
 
 
 

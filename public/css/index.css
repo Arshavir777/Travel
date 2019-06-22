@@ -1,0 +1,15 @@
+@media screen and (max-width: 992px) {
+    .navbar-collapse {
+        display:inline-block;
+        text-align: center;
+        background:rgba(19,46,78,0.5);
+        border-radius:30px
+    }
+
+}
+
+.modal-body{
+    display:flex;
+    justify-content: space-around;
+    align-items: center
+}

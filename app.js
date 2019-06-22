@@ -4,11 +4,19 @@ import ip from 'ip'
 import i18n from 'i18n'
 import cookieParser from 'cookie-parser'
 import './i18n'
-
-// const MongoClient = require('mongodb').MongoClient;
 var tourRouter = require( './routes/tours')
 const app = express()
 const port = (process.env.PORT || 3000)
+
+//
+
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+//
+
+// const MongoClient = require('mongodb').MongoClient;
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser())
 app.use(i18n.init)
