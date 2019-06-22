@@ -2,14 +2,30 @@
     .navbar-collapse {
         display:inline-block;
         text-align: center;
-        background:rgba(19,46,78,0.5);
+        background:rgb(61, 136, 186);
         border-radius:30px
     }
 
 }
+.nav-link{
+    font-size: 20px;
+    color:white!important
+}
+.card{min-height: 400px;}
 
-.modal-body{
+.modal-body {
+    background-image: url("/images/modal_back.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.modal-body>div{
     display:flex;
     justify-content: space-around;
     align-items: center
 }
+
+.fixed-top.scrolledNav {
+    background-color:rgb(61, 136, 186) !important;
+    transition: background-color 400ms linear;
+  }

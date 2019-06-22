@@ -313,3 +313,8 @@
 
 
 }());
+
+  $(document).scroll(function () {
+    var $nav = $(".fixed-top");
+    $nav.toggleClass('scrolledNav', $(this).scrollTop() > $nav.height());
+  });
