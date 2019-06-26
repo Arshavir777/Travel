@@ -2,7 +2,7 @@
     .navbar-collapse {
         display:inline-block;
         text-align: center;
-        background:rgb(61, 136, 186);
+        background:#1e1e21;
         border-radius:30px
     }
 
@@ -26,6 +26,6 @@
 }
 
 .fixed-top.scrolledNav {
-    background-color:rgb(61, 136, 186) !important;
+    background-color:#1e1e21 !important;
     transition: background-color 400ms linear;
   }

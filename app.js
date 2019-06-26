@@ -4,10 +4,12 @@ import ip from 'ip'
 import i18n from 'i18n'
 import cookieParser from 'cookie-parser'
 import './i18n'
+const mongoose = require('mongoose');
 var tourRouter = require( './routes/tours')
 const app = express()
 const port = (process.env.PORT || 3000)
-
+const uri = process.env.MONGO_URL || "mongodb+srv://arshavir:9mywhJTYX48nVVk@cluster0-lokck.mongodb.net/travel?retryWrites=true&w=majority"
+mongoose.connect(uri, { useNewUrlParser: true } )
 //
 
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
@@ -15,7 +17,7 @@ app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redi
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 //
 
-// const MongoClient = require('mongodb').MongoClient;
+//  const MongoClient = require('mongodb').MongoClient;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser())
@@ -32,8 +34,6 @@ app.use('/tour', tourRouter)
 app.set("view engine", "ejs")
 app.set('views', __dirname + '/views')
 
-// const uri = process.env.MONGO_URL 
-
 // const Mclient = new MongoClient(uri, { 
 //     useNewUrlParser: true,
 //     reconnectTries: Number.MAX_VALUE,
@@ -43,11 +43,14 @@ app.set('views', __dirname + '/views')
 //     if(err){
 //         console.log(err.message)
 //     }else{
-//          app.locals.db = client.db("test")
+//          app.locals.db = client.db("travel")
 //          app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 //     }
     
 // });
 
-app.get('/', (req, res) => {res.render('index.ejs')})
+app.get('/', (req, res) => {
+  res.render('index.ejs')
+
+})
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
