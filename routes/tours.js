@@ -5,5 +5,6 @@ let router = express.Router()
 let tourController = require('../controllers/tourController' )
 
 router.get('/historical-cultural', tourController.historicalCulturalPage)
+router.get('/historical-cultural/:tour', tourController.historicalCulturalSingle)
 
 module.exports = router

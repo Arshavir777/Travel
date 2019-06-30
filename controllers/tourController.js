@@ -1,13 +1,45 @@
 const Tours = require('../models/tours')
+const Destination = require('../models/destination')
 
 
 exports.historicalCulturalPage = (req, res ) => {
     let lng = req.cookies.lng
-    Tours.findOne({name:'historical_cultural'}, (error, response) => {
-        res.render('historical-cultural.ejs',{
-            header_title:response.title[lng]
-        })
-    });
+    Tours.aggregate([
+        {"$match": {name: "historical_cultural"}},
+        {
+            "$lookup": {
+                "from": "destinations",
+                "localField": "ID",
+                "foreignField": "tour_id",
+                "as": "dest"
+                }
+        },
+        {"$unwind": "$dest"},
+        {
+            "$group": {
+                "_id": "$title",
+                "data": {"$push": "$dest"}
+            }
+        }
+]).exec(( error , response ) => {
+        if(error){
+            console.log(error)
+        }
        
+        let result = response[0]
+        res.render('historical-cultural.ejs',{
+            header_title: result._id[lng],
+            data: result.data
+        })
+    }) 
+}
+
+exports.historicalCulturalSingle = (req, res ) => {
+    let destination =  req.params.tour
+    Destination.findOne({name: destination}).exec( (error, response) => {
+        res.render('single_tour.ejs', {
+            data: response
+        })
+    })
     
 }

@@ -308,7 +308,7 @@
 		location.reload()
 	})
 
-	$('#myModal').modal('show')
+	// $('#myModal').modal('show')
 
 
 
