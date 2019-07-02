@@ -1,10 +1,12 @@
 import express from 'express'
 import path from 'path'
 import ip from 'ip'
+import docxParser from 'docx-parser'
 import i18n from 'i18n'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import './i18n'
+import fs from 'fs'
 const mongoose = require('mongoose');
 var tourRouter = require( './routes/tours')
 const app = express()
@@ -37,6 +39,24 @@ app.set('views', __dirname + '/views')
 
 app.get('/', (req, res) => {
   res.render('index.ejs')
-
 })
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.get('/docx', () => {
+  docxParser.parseDocx("/home/arshavir/Documents/pm.docx", function(data){
+    let www = []
+    let array = data.split('+')
+      array.forEach((e, i) => {
+        www.push(e.split("*"))
+      });
+      www.shift()
+      let output = JSON.stringify(www)
+
+      fs.writeFile('/home/arshavir/Documents/output.json', output, err => {
+        if(err){
+          console.log(err)
+        }
+      })
+      
+})
+})
+app.listen(port, () => console.log(`Example app on port ${port}!`)) 
