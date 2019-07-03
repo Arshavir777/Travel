@@ -64,6 +64,15 @@
 
 	</head>
 <body>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
 	<div class="colorlib-loader"></div>
 
 <nav class="navbar navbar-expand-lg navbar-light scrolling-navbar fixed-top ">
@@ -71,7 +80,7 @@
 	<img src="/images/logo verjnakan [Converted].png"  height="50px">
   </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button onclick="openNav()" id='mobileNav' class="navbar-toggler" type="button"  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -101,12 +110,12 @@
       </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/gallery">
 			<%=__('Gallery')%>
 		</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/about">
 			<%=__('About As')%>
 		</a>
       </li>

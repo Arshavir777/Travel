@@ -40,6 +40,12 @@ app.set('views', __dirname + '/views')
 app.get('/', (req, res) => {
   res.render('index.ejs')
 })
+app.get('/gallery', (req, res) => {
+  res.render('gallery.ejs')
+} )
+app.get('/about', (req, res) => {
+  res.render('about.ejs')
+} )
 
 app.get('/docx', () => {
   docxParser.parseDocx("/home/arshavir/Documents/pm.docx", function(data){

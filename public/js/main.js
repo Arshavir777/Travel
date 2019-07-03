@@ -318,3 +318,22 @@
     var $nav = $(".fixed-top");
     $nav.toggleClass('scrolledNav', $(this).scrollTop() > $nav.height());
   });
+
+  for (var i = 0; i < document.links.length; i++) {
+    if (document.links[i].href == document.URL) {
+        document.links[i].classList.add('activeMenu');
+    }
+	}
+
+	$('#mobileNav').on('click', function(e){
+		e.stopPropagation
+		document.getElementById("myNav").style.width = "100%";
+	})
+//Mobile navbar 
+	function openNav() {
+		document.getElementById("myNav").style.width = "100%";
+	  }
+	  
+	  function closeNav() {
+		document.getElementById("myNav").style.width = "0%";
+	  }
