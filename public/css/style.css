@@ -574,7 +574,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0;
   margin: 0; }
   .tour-wrap .tour-entry {
-    width: 25%;
+    width: 33.333%;
     float: left;
     position: relative;
     height: 250px;

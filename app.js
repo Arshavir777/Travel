@@ -9,6 +9,7 @@ import './i18n'
 import fs from 'fs'
 const mongoose = require('mongoose');
 var tourRouter = require( './routes/tours')
+var indexRouter = require( './routes/index')
 const app = express()
 const port = (process.env.PORT || 3000)
 const uri = process.env.MONGO_URL || "mongodb+srv://arshavir:9mywhJTYX48nVVk@cluster0-lokck.mongodb.net/travel?retryWrites=true&w=majority"
@@ -37,9 +38,7 @@ app.use('/tour', tourRouter)
 app.set("view engine", "ejs")
 app.set('views', __dirname + '/views')
 
-app.get('/', (req, res) => {
-  res.render('index.ejs')
-})
+app.use('/', indexRouter)
 app.get('/gallery', (req, res) => {
   res.render('gallery.ejs')
 } )
@@ -47,22 +46,4 @@ app.get('/about', (req, res) => {
   res.render('about.ejs')
 } )
 
-app.get('/docx', () => {
-  docxParser.parseDocx("/home/arshavir/Documents/pm.docx", function(data){
-    let www = []
-    let array = data.split('+')
-      array.forEach((e, i) => {
-        www.push(e.split("*"))
-      });
-      www.shift()
-      let output = JSON.stringify(www)
-
-      fs.writeFile('/home/arshavir/Documents/output.json', output, err => {
-        if(err){
-          console.log(err)
-        }
-      })
-      
-})
-})
 app.listen(port, () => console.log(`Example app on port ${port}!`)) 

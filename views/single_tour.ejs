@@ -2,11 +2,11 @@
 	<div class="colorlib-loader"></div>
 		<aside id="colorlib-hero">
 			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(/images/<%=data.img%>);">
+				<ul class="slides ">
+			   	<li  style="background-image: url(/images/<%=data.img%>);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
-			   			<div class="row">
+			   			<div class="row firstLayout">
 				   			<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1><%=data.title[lng]%></h1>
@@ -19,14 +19,15 @@
 		  	</div>
 		</aside>
 
-        <div>
+        <div class="descriptionRow">
             <h2 class="text-center text-info ">Նկարագրություն</h2>
+            <br>
             <div class="row">
                 <div class="col-md-8 text-center ml-auto mr-auto">
                     <p>
                         <%=data.description[lng]%>      
                     </p>
-                    <br>
+                    <br><br>
                     <span> <%=data.spec_description[lng]%></span>
                 </div>
             </div>
@@ -78,7 +79,20 @@
         align-items: center;
         margin:10px;
         padding-top:10px;
+        max-height:300px
 
+    }
+    .card{
+        min-height:300px !important
+    }
+    .desc_card div{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+    }
+    #colorlib-hero{
+        margin-bottom: 50px;
     }
 </style>
 <%- include('./layouts/footer.ejs')%>
