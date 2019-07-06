@@ -1,6 +1,9 @@
 @font-face {
   font-family: armArtur;
-  src: url('../fonts/Armartur.ttf');
+  src: url('../fonts/GHEAMariamBld.otf');
+}
+.nav-item{
+  font-family: armArtur
 }
 .navbar-toggler {
  border: unset
@@ -11,12 +14,12 @@
   font-size: 4.0rem !important
 }
 .slider-text-inner h2 {
-  font-family: armArtur;
+  font-family: armArtur!important;
   color: white;
-  font-size: 3.0rem!important
+  font-size: 2.0rem!important
 }
-.container-fluid>div{
-  background-color: rgba(0,0,0, 0.6)
+.firstLayout{
+  background-color: rgba(0,0,0, 0.5)
 }
 @media screen and (max-width: 992px) {
     .navbar-collapse {
@@ -31,10 +34,10 @@
     .slider-text-inner h1{
       font-family: armArtur;
       color: white;
-      font-size: 2.2rem !important
+      font-size: 2.0rem !important
     }
     .slider-text-inner h2 {
-      font-family: armArtur;
+      font-family: armArtur!important;
       color: white;
       font-size: 1.2rem!important
     }
@@ -74,7 +77,7 @@
     align-items: center
 }
 .navbar-light{
-  background: linear-gradient(95deg, #5533ff 40%, #25ddf5 100%) !important;
+  background: #34718c!important;
 }
 /* .fixed-top.scrolledNav {
     background-color:#1e1e21 !important;
@@ -137,10 +140,10 @@
   /* Contact Section */
 
   #contact form#contactForm .form-group {
-    margin-bottom: 30px; }
+    margin-bottom: 15px; }
   
   #contact form#contactForm input[type=text], #contact form#contactForm input[type=email] {
-    min-height: 52px;
+    max-height: 35px !important;
     padding: 0px 0 0 28px;
     font-size: 16px;
     color: #5e629c; }
