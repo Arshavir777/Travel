@@ -1,0 +1,49 @@
+<%- include('./layouts/header.ejs') %>
+<style>
+	.adv_tours{
+		background: linear-gradient( #e65c00,#f9d423 );
+		text-decoration: none;
+		display: flex;
+		justify-content: center;
+		align-items: center
+	}
+	</style>
+	<div class="colorlib-loader"></div>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(/images/adventureBackground.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row firstLayout">
+				   			<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>Արկածային</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+		<div class="colorlib-wrap">
+			<div class="container">
+				<div class="row justify-content-md-center">
+					<div class="col-md-12">
+						<div class="row">
+							<%data.forEach( elem => {%>
+							<a style="height:400px!important"  href="/adventure/<%=elem._id%>" class=" adv_tours text-center border-danger col-md-3 border  m-4 ">
+									<h2><%=elem.title[lng]%></h2>		
+							</a>
+							<%})%>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- SIDEBAR-->
+			</div>
+
+		<%- include('./layouts/footer.ejs')%>

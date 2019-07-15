@@ -40,7 +40,6 @@ exports.index = (req, res)=>{
         if(error){
             console.log(error)
         }
-        console.log(response)
         res.render('index.ejs', {
             data:response
         })

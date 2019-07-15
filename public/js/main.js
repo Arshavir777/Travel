@@ -319,11 +319,6 @@
 //     $nav.toggleClass('scrolledNav', $(this).scrollTop() > $nav.height());
 //   });
 
-  for (var i = 0; i < document.links.length; i++) {
-    if (document.links[i].href == document.URL) {
-        document.links[i].classList.add('activeMenu');
-    }
-	}
 
 	$('#mobileNav').on('click', function(e){
 		e.stopPropagation

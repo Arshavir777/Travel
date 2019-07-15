@@ -103,7 +103,7 @@
         <a class="dropdown-item" href="/tour/gastronomic">
 			<%=__('Gastronomic')%>
 		</a>
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" href="/tour/adventure">
 			<%=__('Adventure')%>
 		</a>
 		<a class="dropdown-item" href="#">
@@ -183,5 +183,13 @@
 	s1.setAttribute('crossorigin','*');
 	s0.parentNode.insertBefore(s1,s0);
 	})();
-	</script>
+
+for (var i = 0; i < document.links.length; i++) {
+	  console.log(document.links[i])
+    if (document.links[i].href == document.URL && document.links[i].classList.indexOf('nav-item') != -1 ) {
+        document.links[i].classList.add('activeMenu');
+    }
+}
+
+</script>
 	<!--End of Tawk.to Script-->

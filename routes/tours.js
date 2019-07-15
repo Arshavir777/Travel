@@ -6,6 +6,7 @@ let tourController = require('../controllers/tourController' )
 
 router.get('/historical-cultural', tourController.historicalCulturalPage)
 router.get('/gastronomic', tourController.gastronomicPage)
+router.get('/adventure', tourController.adventurePage)
 //
 router.get('/historical-cultural/:tour', tourController.historicalCulturalSingle)
 
