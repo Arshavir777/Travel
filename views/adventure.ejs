@@ -1,11 +1,12 @@
 <%- include('./layouts/header.ejs') %>
 <style>
+/* linear-gradient(45deg,  #ff4e50, #f9d423  );*/
 	.adv_tours{
-		background: linear-gradient( #e65c00,#f9d423 );
-		text-decoration: none;
+  background: linear-gradient(to top, #56ccf2, #2f80ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */		text-decoration: none !important;
 		display: flex;
 		justify-content: center;
-		align-items: center
+		align-items: center;
+		border-radius: 20px
 	}
 	</style>
 	<div class="colorlib-loader"></div>
@@ -30,11 +31,15 @@
 
 		<div class="colorlib-wrap">
 			<div class="container">
-				<div class="row justify-content-md-center">
+				<div class="row">
 					<div class="col-md-12">
-						<div class="row">
-							<%data.forEach( elem => {%>
-							<a style="height:400px!important"  href="/adventure/<%=elem._id%>" class=" adv_tours text-center border-danger col-md-3 border  m-4 ">
+						<div class="row  justify-content-md-center">
+							<% data.forEach( elem => { %>
+							<a 
+								style="height:400px!important"
+								href="<%=elem.single == true ? `/tour/adventure-single/${elem.name}` : `/tour/adventure-group/${elem.ID}`%>"
+								class=" rounded-md adv_tours text-center  col-md-3   m-4 "
+								>
 									<h2><%=elem.title[lng]%></h2>		
 							</a>
 							<%})%>

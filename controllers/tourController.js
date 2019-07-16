@@ -69,29 +69,9 @@ exports.gastronomicPage = (req, res ) => {
 
 
 
-exports.adventurePage = (req, res ) => {
-    let lng = req.cookies.lng
-   TourCategory.find({})
-.exec(( error , response ) => {
-        if(error){
-            console.log(error)
-        }
-       
-        let result = response
-
-        console.log(result)
-        res.render('adventure.ejs',{
-           // header_title: result._id[lng],
-            data: result
-        })
-    }) 
-}
-
-
 exports.historicalCulturalSingle = (req, res ) => {
     let destination =  req.params.tour
     Destination.findOne({name: destination}).exec( (error, response) => {
-        console.log(response)
         res.render('single_tour.ejs', {
             data: response
         })

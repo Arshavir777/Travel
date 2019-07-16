@@ -3,11 +3,7 @@ const Destination = require('../models/destination')
 const PopularDestinations = require('../models/popularDestinations')
 
 exports.index = (req, res)=>{
-    // res.render('index.ejs')
     let lng = req.cookies.lng
-    // PopularDestinations.findOne({}).exec((error, response) => {
-    //     console.log(response)
-    // })
     PopularDestinations.aggregate([
         {
             "$lookup": {

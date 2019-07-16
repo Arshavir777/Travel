@@ -21,6 +21,9 @@
 .firstLayout{
   background-color: rgba(0,0,0, 0.4)
 }
+.secondLayout{
+  background-color: rgba(0,0,0, 0.3)
+}
 @media screen and (max-width: 992px) {
   .readMore{
     width:100%
@@ -84,7 +87,7 @@
 }
 .navbar-light{
   /*   #34718c!important */
-  background:linear-gradient(58deg , #D38312, #A83279);
+  background:linear-gradient(58deg , #00b4db, #0083b0);
 }
 /* .fixed-top.scrolledNav {
     background-color:#1e1e21 !important;

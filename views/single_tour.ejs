@@ -31,12 +31,13 @@
                     <span> <%=data.spec_description[lng]%></span>
                 </div>
             </div>
-<div class="row justify-content-md-center">
-         <div class="  mt-4">
-            <h2 class="text-center">Գնացուցակ </h2>
+<div class="row justify-content-center">
+         <div class=" mt-4 ">
+            <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
             <%# Gastronomic single tour prices %>
             <%if(data.tour_id === 2){%>
-                 <table class=" table  table-bordered table-dark ">
+            <div class="table table-responsive" style="overflow-x: scroll">
+                 <table class="   table-bordered table-dark ">
                     <thead>
                         <th>
                             <td> </td>
@@ -61,8 +62,10 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
             <% }else{ %>  
-                 <table class=" table  table-bordered table-dark ">
+             <div style="overflow-x: scroll" >
+                 <table class="table  table-bordered table-dark ">
                     <thead>
                         <th>
                             
@@ -87,6 +90,7 @@
                         </tr>
                     </tbody>
                 </table>
+            </div> 
             <% } %>                  
         </div>
 </div>
@@ -97,7 +101,7 @@
                                     <img width="100px" height="100px" src="/images/schedule.png">
                                     <div class="card-body text-center">
                                         <h5 class="card-text">Ժամանակահատվածը</h5>
-                                        <div><%=data.time%>ժամ</div>
+                                        <div><%=data.time%> ժամ</div>
                                     </div>
                                 </div>
                             </div>
@@ -134,25 +138,30 @@
 
         </div>
 <style>
+.table {
+   display: block !important;
+}
     .desc_card{
         display:flex;
         align-items: center;
         margin:10px;
         padding-top:10px;
-        max-height:300px
+        max-height:300px;
+        background:linear-gradient(to top, #56ccf2, #2f80ed);
 
     }
     .card{
         min-height:300px !important
     }
     .desc_card div{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     #colorlib-hero{
         margin-bottom: 50px;
     }
+    /* linear-gradient(58deg , #00b4db, #0083b0) */
 </style>
 <%- include('./layouts/footer.ejs')%>
