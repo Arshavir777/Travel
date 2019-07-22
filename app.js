@@ -39,11 +39,7 @@ app.set("view engine", "ejs")
 app.set('views', __dirname + '/views')
 
 app.use('/', indexRouter)
-app.get('/gallery', (req, res) => {
-  res.render('gallery.ejs')
-} )
-app.get('/about', (req, res) => {
-  res.render('about.ejs')
-} )
+app.get('/gallery', (req, res) => { res.render('gallery.ejs') })
+app.get('/about', (req, res) => { res.render('about.ejs') })
 
 app.listen(port, () => console.log(`Example app on port ${port}!`)) 

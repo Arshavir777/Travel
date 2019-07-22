@@ -1,0 +1,60 @@
+<%- include('../layouts/header.ejs') %>
+	<div class="colorlib-loader"></div>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides ">
+			   	<li  style="background-image: url(/images/<%=data.img%>);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row firstLayout">
+				   			<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1><%=data.title[lng]%></h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+        <div class="descriptionRow">
+            <h2 class="text-center text-info ">Նկարագրություն</h2>
+            <br>
+            <div class="row">
+                <div class="col-md-8 text-center ml-auto mr-auto">
+                    <p>
+                        <%=data.description[lng]%>      
+                    </p>
+                    <br><br>
+                    
+         </div>
+<style>
+.table {
+   display: block !important;
+}
+    .desc_card{
+        display:flex;
+        align-items: center;
+        margin:10px;
+        padding-top:10px;
+        max-height:300px;
+        background:linear-gradient(to top, #56ccf2, #2f80ed);
+
+    }
+    .card{
+        min-height:300px !important
+    }
+    .desc_card div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #colorlib-hero{
+        margin-bottom: 50px;
+    }
+    /* linear-gradient(58deg , #00b4db, #0083b0) */
+</style>
+<%- include('../layouts/footer.ejs')%>
