@@ -266,17 +266,6 @@
 		});
 	};
 
-	var parallax = function() {
-
-		if ( !isMobile.any() ) {
-			$(window).stellar({
-				horizontalScrolling: false,
-				hideDistantElements: false, 
-				responsive: true
-
-			});
-		}
-	};
 
 	var datePicker = function() {
 		// jQuery('#time').timepicker();
@@ -324,6 +313,7 @@
 		e.stopPropagation
 		document.getElementById("myNav").style.width = "100%";
 	})
+	//   var lightbox = $('.gallery a').simpleLightbox();
 //Mobile navbar 
 	function openNav() {
 		document.getElementById("myNav").style.width = "100%";

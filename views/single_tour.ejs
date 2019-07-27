@@ -36,7 +36,7 @@
             <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
             <%# Gastronomic single tour prices %>
             <%if(data.tour_id === 2){%>
-            <div class="table table-responsive" style="overflow-x: scroll">
+            <div class="table table-responsive" >
                  <table class="   table-bordered table-dark ">
                     <thead>
                         <th>
@@ -49,13 +49,13 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Գիդով</td>
+                            <td>Գիդ</td>
                             <%data.prices[0].head.forEach( elem => {%>
                                     <td><%=elem%> Դ</td>
                             <%})%>
                         </tr>
                         <tr>
-                                <td>Ուղեկցորդով</td>
+                                <td>Ուղեկցորդ</td>
                             <%data.prices[0].guide.forEach( elem => {%>
                                     <td><%=elem%> Դ</td>
                              <%})%>
@@ -64,12 +64,12 @@
                 </table>
             </div>
             <% }else{ %>  
-             <div style="overflow-x: scroll" >
-                 <table class="table  table-bordered table-dark ">
+             <div  >
+                 <table class="teble table-bordered  table-success text-center table-hover   ">
                     <thead>
                         <th>
                             
-                            <%for(let i = 1; i < data.prices.length/2 + 1; i++ ){ %>
+                            <%for(let i = 1; i < data.prices.length/2 + 2; i++ ){ %>
                             <td><%=i%></td>
                             <% }%>
                            
@@ -77,10 +77,13 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Գիդով</td>
+                            <td>Գիդ</td>
                             <%data.prices.forEach( elem => {if(elem.head){%>
                                     <td><%=elem.price%> Դ</td>
                             <%}})%>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         <tr>
                                 <td>Առանց Գիդ</td>
