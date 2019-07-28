@@ -1,0 +1,162 @@
+<%- include('../layouts/header.ejs') %>
+<div class="colorlib-loader"></div>
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides ">
+            <li style="background-image: url(/images/<%=data.img%>);">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row firstLayout">
+                        <div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h1><%=data.title[lng]%></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<div class="container">
+    <h2 class="text-center text-info ">Նկարագրություն</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-8 text-center ml-auto mr-auto">
+            <p>
+                <%=data.description[lng]%>
+            </p>
+            <br>
+            <span> <%=data.spec_description[lng]%></span>
+        </div>
+    </div>
+
+    <h2 class="text-center mt-5 mb-3">Հետաքրքիր է իմանալ </h2>
+    <div class="row">
+            <div class="col-md-8 text-center ml-auto mr-auto">
+                <p>
+                    <%=data.text[lng]%>
+                </p>
+            </div>
+        </div>
+
+
+    <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
+    <div class="row justify-content-center">
+        <div class=" mt-4  " style="overflow-x: auto; direction: ltr">
+            <table class="table table-bordered  table-responsive table-info text-center">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <td>
+                            Տևողություն
+                        </td>
+                        <td>
+                            Երկարություն
+                        </td>
+                        <td>
+                            Գին
+                        </td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Փաթեթ 1</td>
+                        <td><%=data.packages[0].duration%></td>
+                        <td><%=data.packages[0].length%> կմ</td>
+                        <td><%=data.packages[0].price%> Դ</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Փաթեթ 2</td>
+
+                        <td><%=data.packages[1].duration%></td>
+                        <td><%=data.packages[1].length%> կմ</td>
+                        <td><%=data.packages[1].price%> Դ</td>
+
+
+                    </tr>
+                    <tr>
+                        <td>Փաթեթ 3</td>
+
+                        <td><%=data.packages[2].duration%></td>
+                        <td><%=data.packages[2].length%> կմ</td>
+                        <td><%=data.packages[2].price%> Դ</td>
+
+                    </tr>
+                    <tr>
+                        <td>Փաթեթ 4</td>
+                        <td><%=data.packages[3].duration%></td>
+                        <td><%=data.packages[3].length%> կմ</td>
+                        <td><%=data.packages[3].price%> Դ</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="row  justify-content-center">
+        <div class="col-md-3">
+            <div class="card desc_card">
+                <img width="100px" height="100px" src="/images/schedule.png">
+                <div class="card-body text-center">
+                    <h5 class="card-text">Ժամանակահատվածը</h5>
+                    <div><%=data.time%> ժամ</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card desc_card ">
+                <img width="100px" height="100px" src="/images/price_include.png">
+                <div class="card-body text-center">
+                    <h5 class="card-text">Արժեքը <br>ներառում է</h5>
+                    <div><%=data.price_include [lng]%></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</div>
+
+<style>
+    .table {
+        display: block !important;
+    }
+
+    .desc_card {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        padding-top: 10px;
+        max-height: 400px;
+        background: linear-gradient(to top, #56ccf2, #2f80ed);
+
+    }
+
+    .card {
+        min-height: 400px !important
+    }
+
+    .desc_card div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #colorlib-hero {
+        margin-bottom: 50px;
+    }
+
+    /* linear-gradient(58deg , #00b4db, #0083b0) */
+</style>
+<%- include('../layouts/footer.ejs')%>

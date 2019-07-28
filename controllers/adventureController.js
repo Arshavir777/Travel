@@ -45,9 +45,19 @@ exports.adventureGroup = (req, res) => {
 // data for adventure Single Page 
 exports.adventureSingle = (req, res) => {
     let destination =  req.params.tour
-    Destination.findOne({name: destination}).exec( (error, response) => {
-        res.render('single_tour.ejs', {
-            data: response
+
+    if(destination === 'rafting'){
+        Destination.findOne({name: destination}).exec( (error, response) => {
+            res.render('adventure/rafting.ejs', {
+                data: response
+            })
         })
-    })
+    }else{
+        Destination.findOne({name: destination}).exec( (error, response) => {
+            res.render('single_tour.ejs', {
+                data: response
+            })
+        })
+    }
+   
 }
