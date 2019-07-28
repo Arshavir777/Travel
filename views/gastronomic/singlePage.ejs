@@ -1,4 +1,4 @@
-<%- include('./layouts/header.ejs') %>
+<%- include('../layouts/header.ejs') %>
 <div class="colorlib-loader"></div>
 <aside id="colorlib-hero">
     <div class="flexslider">
@@ -31,70 +31,38 @@
             <span> <%=data.spec_description[lng]%></span>
         </div>
     </div>
-</div>
-<%# Gastronomic single tour prices %>
-<h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
-<div class="row justify-content-center">
-    <%if(data.tour_id === 2){%>
-    <div style="overflow-x: auto; direction: ltr">
-        <table class="teble table-bordered  table-success text-center table-hover   ">
-            <thead>
-                <th>
-                <td> </td>
-                <%for(let i = 1; i < data.prices[0].head.length; i++ ){ %>
-                <td><%=i%> Անձ</td>
-                <% }%>
+    <%# Gastronomic single tour prices %>
+    <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
+    
+    <div class="row justify-content-center">
+        <div style="overflow-x: auto; direction: ltr" >
+            <table class="teble table-bordered  table-success text-center table-hover   ">
+                <thead>
+                    <th>
+                    
+                    <%for(let i = 1; i <= data.prices[0].head.length; i++ ){ %>
+                    <td><%=i%> Անձ</td>
+                    <% }%>
 
-                </th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Գիդ</td>
-                    <%data.prices[0].head.forEach( elem => {%>
-                    <td><%=elem%> Դ</td>
-                    <%})%>
-                </tr>
-                <tr>
-                    <td>Ուղեկցորդ</td>
-                    <%data.prices[0].guide.forEach( elem => {%>
-                    <td><%=elem%> Դ</td>
-                    <%})%>
-                </tr>
-            </tbody>
-        </table>
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Գիդ</td>
+                        <%data.prices[0].head.forEach( elem => {%>
+                        <td><%=elem%> Դ</td>
+                        <%})%>
+                    </tr>
+                    <tr>
+                        <td>Ուղեկցորդ</td>
+                        <%data.prices[0].guide.forEach( elem => {%>
+                        <td><%=elem%> Դ</td>
+                        <%})%>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <% }else{ %>
-    <div style="overflow-x: auto; direction: ltr">
-        <table class="teble table-bordered  table-success text-center table-hover   ">
-            <thead>
-                <th>
-
-                    <%for(let i = 1; i < data.prices.length/2 + 2; i++ ){ %>
-                <td><%=i%> Անձ</td>
-                <% }%>
-
-                </th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Գիդ</td>
-                    <%data.prices.forEach( elem => {if(elem.head){%>
-                    <td><%=elem.price%> Դ</td>
-                    <%}})%>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>Առանց Գիդ</td>
-                    <%data.prices.forEach( elem => { if(!elem.head){%>
-                    <td><%=elem.price%> Դ</td>
-                    <%}})%>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <% } %>
 </div>
 
 <div class="row ">
@@ -171,4 +139,4 @@
 
     /* linear-gradient(58deg , #00b4db, #0083b0) */
 </style>
-<%- include('./layouts/footer.ejs')%>
+<%- include('../layouts/footer.ejs')%>

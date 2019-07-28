@@ -1,9 +1,20 @@
 <%-include('./layouts/header.ejs') %>
+<style> 
+#business-plan{
+  background-image: url('/images/animal-dawn-desktop-backgrounds-875858.jpg');
+  min-height: 90vh;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed
 
-	  <section id="business-plan"' style='margin-top:20px'>
-      	<div class="container">
 
-        <div class="row">
+}
+</style>
+	  <div id="business-plan"  >
+      	<div class="container pt-5 ">
+
+        <div class="row ">
           <!-- Start Col -->
           <div class="col-lg-6 col-md-12 pl-0 pt-70 pr-5">
             <div class="business-item-img">
@@ -14,7 +25,7 @@
           <!-- Start Col -->
           <div class="col-lg-6 col-md-12 pl-4">
             <div class="business-item-info text-center">
-              <h3 >Մեր Մասին</h3>
+              <h3  class="mb-4">Մեր Մասին</h3>
               <p>
               <%=__('aboutText')%>
               </p>
@@ -24,5 +35,5 @@
 
         </div>
       </div>
-    </section>
+    </div>
 		<%-include('./layouts/footer.ejs') %>
