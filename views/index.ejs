@@ -65,10 +65,10 @@
 						<%# <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p> %>
 						<h2><%=dest.top.title[lng]%></h2>
 						<% if(dest.tour.name === 'historical-cultural'){%>
-							<span class="price">Սկսած <%=dest.top.prices[5].price%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
+							<span class="price">Սկսած <%=dest.top.prices[6].price%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
 						<%}%>
 						<% if(dest.tour.name === 'gastronomic'){%>
-							<span class="price">Սկսած <%=dest.top.prices.head[3]%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
+							<span class="price">Սկսած <%=dest.top.prices.guide[4]%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
 
 						<%}%>
 						<% if(dest.tour.name === 'historical_cultural'){%>
@@ -80,23 +80,23 @@
 				<%})%>
 			</div>
 		</div>
-		<div class="row justify-content-center mt-5 mb-5 service_icons" style="width: 100%; float:left">
-			<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+		<div class="row justify-content-center   service_icons" style="width: 100%; float:left; margin-bottom:90px">
+			<a href="/tour/gastronomic" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main ">
 						<img src="/images/food_logo.jpg" width="200px" height="200px">
 						<h4>Գաաստրոնոմիկ </h4>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+			</a>
+			<a href="/tour/adventure" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main">
 					<img src="/images/adventure_logo.png" width="200px" height="200px">
 					<h4>Արկածային </h4>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+			</a>
+			<a href="/tour/historical-cultural" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main">
 					<img src="/images/historical_cultural_logo.png" width="200px" height="200px">
 					<h4>Պատմամշակութային </h4>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+			</a>
+			<a href="/tour/medical" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main">
 					<img src="/images/med_logo.png" width="200px" height="200px">
 					<h4>Բուժական </h4>
-			</div>
+			</a>
 		</div>
 	</div>	
 

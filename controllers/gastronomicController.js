@@ -28,6 +28,7 @@ exports.gastronomicPage = (req, res ) => {
                 }
         },
         {"$unwind": "$dest"},
+        {"$sort": {"dest.order":-1}},
         {
             "$group": {
                 "_id": "$title",

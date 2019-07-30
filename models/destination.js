@@ -14,7 +14,8 @@ const DestinationSchema = new Schema({
         price_include: Object,
         price_exclude: Object,
         packages: Array,
-        text:Object
+        text:Object,
+        order:Number
 });
 
 module.exports = mongoose.model('destinations', DestinationSchema);

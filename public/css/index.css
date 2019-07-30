@@ -24,6 +24,12 @@
 .secondLayout{
   background-color: rgba(0,0,0, 0.3)
 }
+.tour_logos_main:hover{
+  border-radius: 20px;
+  text-decoration: none;    text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(231, 64, 13, 0.2), 0 6px 20px 0 rgba(247, 74, 6, 0.19);
+}
 @media screen and (max-width: 992px) {
 
   .service_icons{
