@@ -322,3 +322,13 @@
 	  function closeNav() {
 		document.getElementById("myNav").style.width = "0%";
 	  }
+	  $('.collapseDiv').on('click', function () {
+		var this_ = $(this)
+		this_.children('span').toggleClass('icon-plus icon-minus')
+		$('.collapseDiv').each( (i,node) => {
+			if($(node).children('span').hasClass('icon-minus') && $(node).attr('href') != this_.attr('href') ){
+				$(node).children('span').toggleClass('icon-minus icon-plus')
+			}
+		})
+		
+	})

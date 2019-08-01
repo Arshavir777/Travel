@@ -1,196 +1,230 @@
 <%- include('../layouts/header.ejs') %>
-    <div class="colorlib-loader"></div>
-    <div id="colorlib-hero">
-        <div class="flexslider">
-            <ul class="slides ">
-                <li style="background-image: url(/images/<%=data.img%>);">
-                    <div class="overlay"></div>
-                    <div class="container-fluid">
-                        <div class="row firstLayout">
-                            <div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
-                                <div class="slider-text-inner text-center">
-                                    <h1>
-                                        <%=data.title[lng]%>
-                                    </h1>
-                                </div>
+<div class="colorlib-loader"></div>
+<div id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides ">
+            <li style="background-image: url(/images/<%=data.img%>);">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row firstLayout">
+                        <div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h1>
+                                    <%=data.title[lng]%>
+                                </h1>
                             </div>
                         </div>
                     </div>
-                </li>
-            </ul>
-        </div>
+                </div>
+            </li>
+        </ul>
     </div>
-    <div class="container text-center">
-        <div >
-          
+</div>
+<div class="container text-center">
+    <div>
 
-                        <h2 class="text-center text-info ">Նկարագրություն</h2>
-                        <br>
-                            <div class="col-md-8 text-center ml-auto mr-auto">
-                                <p>
-                                    <%=data.description[lng]%>
-                                </p>
-                                <br><br>
-                    
-                            </div>
-  
-               
+
+        <h2 class="text-center text-info ">Նկարագրություն</h2>
+        <br>
+        <div class="col-md-8 text-center ml-auto mr-auto">
+            <p>
+                <%=data.description[lng]%>
+            </p>
+            <br><br>
+
         </div>
-               
-            <div>
-                    <h2 class="text-center">Հակացուցված են</h2>
-                    <p>
-                        <%=data.contraindications[lng]%>
-                    </p>
-            </div>
 
-   
-     <h2 class="text-center"> Բուժական կաբինետներ</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <p> 
-                
+
+    </div>
+
+    <div class="accordion" id="acc">
+        <div class="row justify-content-center ">
+
+            <a href="#demo" data-toggle="collapse" class=" collapseDiv alert alert-success col-md-10 col-sm-10   ">
+                Բուժական կաբինետներ
+                <span class="icon-plus float-right"></span>
+            </a>
+            <div id="demo" class="col-md-10 collapse" data-parent="#acc">
+                <p>
+
                     <%=data.med_rooms[lng]%>
                 </p>
+
             </div>
-     </div>
-            <h2 class="text-center">Ցուցումներ</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <p> 
-                
+        </div>
+
+        <div class="row justify-content-center ">
+
+            <a href="#demo2" data-toggle="collapse" class=" collapseDiv alert alert-success col-md-10 col-sm-10   ">
+                Հակացուցված են
+                <span class="icon-plus float-right"></span>
+            </a>
+            <div id="demo2" class="col-md-10 collapse" data-parent="#acc">
+                <p>
+                    <%=data.contraindications[lng]%>
+                </p>
+
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="row justify-content-center ">
+
+            <a href="#demo3" data-toggle="collapse" class=" collapseDiv alert alert-success col-md-10 col-sm-10   ">
+                Ցուցումներ
+                <span class="icon-plus float-right"></span>
+            </a>
+            <div id="demo3" class="col-md-10 collapse" data-parent="#acc">
+                <p>
+
                     <%=data.instructions[lng]%>
                 </p>
-            </div>
-     </div>
-        <h2 class="text-center">Տրանսպորտի Գումար</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-3">
-                <div class="card desc_card">
-                    <div class="card-body text-center">
-                        <h5 class="card-text">
-                            <%=data.dest_price[0].count%> Հոգի</h5>
-                        <h4 class="card-text">
-                            <%=data.dest_price[0].price%> Դ</h4>
 
-                    </div>
-                </div>
             </div>
-            <div class="col-md-3">
-                <div class="card desc_card">
-                    <div class="card-body text-center">
-                        <h5 class="card-text">
-                            <%=data.dest_price[1].count%> Հոգի</h5>
-                        <h4 class="card-text">
-                            <%=data.dest_price[1].price%> Դ</h4>
+        </div>
+    </div>
 
-                    </div>
+    <h2 class="text-center">Տրանսպորտի Գումար</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="card desc_card">
+                <div class="card-body text-center">
+                    <h5 class="card-text">
+                        <%=data.dest_price[0].count%> Հոգի</h5>
+                    <h4 class="card-text">
+                        <%=data.dest_price[0].price%> Դ</h4>
+
                 </div>
             </div>
         </div>
-       
-        <h2 class="text-center">Գնացուցակ</h2>
-              <div class="row justify-content-center">
-                  <div>
-                  <table class="teble table-bordered  table-success text-center table-hover ">
-                      <thead>
-                          <tr>
-                             <td></td>
-                              <%data.packages.forEach( pack => {%>
-                                <td>
-                                    <%=pack.name %>  </td>
-                                <% }) %>
+        <div class="col-md-3">
+            <div class="card desc_card">
+                <div class="card-body text-center">
+                    <h5 class="card-text">
+                        <%=data.dest_price[1].count%> Հոգի</h5>
+                    <h4 class="card-text">
+                        <%=data.dest_price[1].price%> Դ</h4>
 
-                          </tr>
-                      </thead>
-                      <tbody>
-                            <tr>
-                                <td>1 Անձ</td>
-                                    <%data.packages.forEach( pack => {%>
-                                
-                                        <td>
-                                                <%=pack.prices[0] %> Դ
-                                        </td>
-                                      
-                                    <% }) %>
-                                  
-                            </tr>
-                            <tr>
-                                    <td>2 Անձ</td>
-                                    <%data.packages.forEach( pack => {%>
-                                
-                                        <td>
-                                                <%=pack.prices[1] %>  Դ
-                                        </td>
-                                      
-                                    <% }) %>
-
-                            </tr>
-                          
-                      </tbody>
-                  </table>
                 </div>
-              </div>  
-    <div class="row justify-content-center ">
-                            <div class="col-md-3">
-                                <div class="card desc_card">                
-                                    <img width="100px" height="100px" src="/images/schedule.png">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-text">Ժամանակահատվածը</h5>
-                                        <div><%=data.time%> ժամ</div>
-                                    </div>
-                                </div>
-                            </div>
-                         
-                                <div class="col-md-3">
-                                        <div class="card desc_card ">                
-                                            <img width="100px" height="100px" src="/images/price_include.png">
-                                            <div class="card-body text-center">
-                                                <h5 class="card-text">Արժեքը  <br>ներառում է</h5>
-                                                <div><%=data.price_include [lng]%></div>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div class="col-md-3">
-                                        <div class="card desc_card ">                
-                                            <img width="100px" height="100px" src="/images/price_exclude.png">
-                                            <div class="card-body text-center">
-                                                <h5 class="card-text">Արժեքը  <br>չի ներառում</h5>
-                                                <div><%=data.price_exclude [lng]%></div>
-                                            </div>
-                                        </div>
-                                </div>
+            </div>
+        </div>
+    </div>
 
-                    </div>
-   </div>
-    <style>
-        .table {
-            display: block !important;
-        }
-        
-        .desc_card {
-            display: flex;
-            align-items: center;
-            margin: 10px;
-            padding-top: 10px;
-            max-height: 300px;
-            background: linear-gradient(to top, #56ccf2, #2f80ed);
-        }
-        
-        .card {
-            min-height: 300px !important
-        }
-        
-        .desc_card div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        #colorlib-hero {
-            margin-bottom: 50px;
-        }
-        /* linear-gradient(58deg , #00b4db, #0083b0) */
-    </style>
-    <%- include('../layouts/footer.ejs')%>
+    <h2 class="text-center">Գնացուցակ</h2>
+    <div class="row justify-content-center">
+        <div>
+            <table class="teble table-bordered  table-success text-center table-hover ">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <%data.packages.forEach( pack => {%>
+                        <td>
+                            <%=pack.name %> </td>
+                        <% }) %>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 Անձ</td>
+                        <%data.packages.forEach( pack => {%>
+
+                        <td>
+                            <%=pack.prices[0] %> Դ
+                        </td>
+
+                        <% }) %>
+
+                    </tr>
+                    <tr>
+                        <td>2 Անձ</td>
+                        <%data.packages.forEach( pack => {%>
+
+                        <td>
+                            <%=pack.prices[1] %> Դ
+                        </td>
+
+                        <% }) %>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center ">
+        <div class="col-md-3">
+            <div class="card desc_card">
+                <img width="100px" height="100px" src="/images/schedule.png">
+                <div class="card-body text-center">
+                    <h5 class="card-text">Ժամանակահատվածը</h5>
+                    <div><%=data.time[lng]%> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card desc_card ">
+                <img width="100px" height="100px" src="/images/price_include.png">
+                <div class="card-body text-center">
+                    <h5 class="card-text">Արժեքը <br>ներառում է</h5>
+                    <div><%=data.price_include [lng]%></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card desc_card ">
+                <img width="100px" height="100px" src="/images/price_exclude.png">
+                <div class="card-body text-center">
+                    <h5 class="card-text">Արժեքը <br>չի ներառում</h5>
+                    <div><%=data.price_exclude [lng]%></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<style>
+    .table {
+        display: block !important;
+    }
+
+    .collapseDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        text-decoration: none !important;
+    }
+
+    .collapseDiv:focus {
+        color: unset !important;
+    }
+
+    .desc_card {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        padding-top: 10px;
+        max-height: 300px;
+        background: linear-gradient(to top, #56ccf2, #2f80ed);
+    }
+
+    .card {
+        min-height: 300px !important
+    }
+
+    .desc_card div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #colorlib-hero {
+        margin-bottom: 50px;
+    }
+
+    /* linear-gradient(58deg , #00b4db, #0083b0) */
+</style>
+<%- include('../layouts/footer.ejs')%>

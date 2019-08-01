@@ -61,7 +61,7 @@
         <div class="col-md-6">
             <h2 class="text-center text-info ">Նկարագրություն</h2>
             <br>
-            <div class="col-md-8 text-center ml-auto mr-auto">
+            <div class="col-md-8 text-center ml-auto mr-auto border border-info rounded ">
                 <p>
                     <%=data.description[lng]%>
                 </p>
@@ -70,49 +70,66 @@
             </div>
         </div>
     </div>
+    <div class="accordion mt-5 mb-5" id="acc">
+        <div class="row justify-content-center ">
 
-    <div class="row mt-5">
+            <a href="#demo" data-toggle="collapse" class=" collapseDiv alert alert-success col-md-10 col-sm-10   ">
+                Բուժվում են հետևյալ հիվանդությունները
+                <span class="icon-plus float-right"></span>
+            </a>
+            <div id="demo" class="col-md-10 collapse" data-parent="#acc">
+                <ul>
+                    <%data.diseases[lng].forEach( elem => {%>
+                    <li>
+                        <%=elem%>
+                    </li>
+                    <%})%>
+                </ul>
 
-        <div class="row justify-content-center">
-
-            <h3 class="text-center"> Բուժվում են հետևյալ հիվանդությունները </h3>
-            <ul>
-                <%data.diseases[lng].forEach( elem => {%>
-                <li>
-                    <%=elem%>
-                </li>
-                <%})%>
-            </ul>
+            </div>
         </div>
+
+        <div class="row justify-content-center ">
+
+            <a href="#demo2" data-toggle="collapse" class=" collapseDiv alert alert-success col-md-10 col-sm-10   ">
+                Բուժական կենտրոն
+                <span class="icon-plus float-right"></span>
+            </a>
+            <div id="demo2" class="col-md-10 collapse" data-parent="#acc">
+                <div class="row justify-content-center">
+
+                    <div class="col-md-6 ">
+                        <h4 class="text-center">Անվճար</h4>
+                        <ul>
+                            <%data.med_center.free[lng].forEach( elem => {%>
+                            <li>
+                                <%=elem%>
+                            </li>
+                            <%})%>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text-center">Վճարովի</h4>
+
+                        <ul>
+                            <%data.med_center.paid[lng].forEach( elem => {%>
+                            <li>
+                                <%=elem%>
+                            </li>
+                            <%})%>
+                        </ul>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
     </div>
 
-    <h2 class="text-center mt-5 mb-2">Բուժական կենտրոն</h2>
-    <div class="row justify-content-md-center">
 
-        <div class="col-md-6 ">
-            <h4 class="text-center">Անվճար</h4>
-            <ul>
-                <%data.med_center.free[lng].forEach( elem => {%>
-                <li>
-                    <%=elem%>
-                </li>
-                <%})%>
-            </ul>
-
-        </div>
-        <div class="col-md-6">
-            <h4 class="text-center">Վճարովի</h4>
-
-            <ul>
-                <%data.med_center.paid[lng].forEach( elem => {%>
-                <li>
-                    <%=elem%>
-                </li>
-                <%})%>
-            </ul>
-
-        </div>
-    </div>
     <h2 class="text-center">Տրանսպորտի Գումար</h2>
     <div class="row justify-content-center  mt-5">
         <div class="col-md-3">
@@ -142,96 +159,108 @@
     <div class="row justify-content-center">
 
         <%data.packages.forEach( elem => {%>
-            <div class=" mt-4 col-md-6 col-sm-12 " style="overflow-x: auto; direction: ltr">
-                <h2 class="text-center">
-                    <%=elem.title[lng] %>
-                </h2>
-                <table class="table table-bordered  table-responsive table-info text-center">
-                    <thead>
+        <div class=" mt-4 col-md-6 col-sm-12 " style="overflow-x: auto; direction: ltr">
+            <h2 class="text-center">
+                <%=elem.title[lng] %>
+            </h2>
+            <table class="table table-bordered  table-responsive table-info text-center">
+                <thead>
 
-                        <tr>
-                            <td> </td>
-                            <%elem.prices.forEach( price => {%>
-                            <td>
-                                <%=price.date %>
-                            </td>
-                            <% }) %>
-                        </tr>
-                    </thead>
+                    <tr>
+                        <td> </td>
+                        <%elem.prices.forEach( price => {%>
+                        <td>
+                            <%=price.date %>
+                        </td>
+                        <% }) %>
+                    </tr>
+                </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>1 Անձ</td>
-                            <%elem.prices.forEach( price => {%>
-                            <td>
-                                <%=price.prices[0] %> Դ </td>
-                            <% }) %>
+                <tbody>
+                    <tr>
+                        <td>1 Անձ</td>
+                        <%elem.prices.forEach( price => {%>
+                        <td>
+                            <%=price.prices[0] %> Դ </td>
+                        <% }) %>
 
-                        </tr>
-                        <tr>
-                            <td>2 Անձ</td>
-                            <%elem.prices.forEach( price => {%>
-                            <td>
-                                <%=price.prices[1] %> Դ </td>
-                            <% }) %>
+                    </tr>
+                    <tr>
+                        <td>2 Անձ</td>
+                        <%elem.prices.forEach( price => {%>
+                        <td>
+                            <%=price.prices[1] %> Դ </td>
+                        <% }) %>
 
-                        </tr>
-                        <%if(elem.title['en'] == 'Olimpia') {%>
-                        <tr>
-                            <td>3 Անձ</td>
-                            <%elem.prices.forEach( price => {%>
-                            <td>
-                                <%=price.prices[2] %> Դ </td>
-                            <% }) %>
+                    </tr>
+                    <%if(elem.title['en'] == 'Olimpia') {%>
+                    <tr>
+                        <td>3 Անձ</td>
+                        <%elem.prices.forEach( price => {%>
+                        <td>
+                            <%=price.prices[2] %> Դ </td>
+                        <% }) %>
 
-                        </tr>
-                        <tr>
-                            <td>4 Անձ</td>
-                            <%elem.prices.forEach( price => {%>
-                            <td>
-                                <%=price.prices[3] %> Դ </td>
-                            <% }) %>
+                    </tr>
+                    <tr>
+                        <td>4 Անձ</td>
+                        <%elem.prices.forEach( price => {%>
+                        <td>
+                            <%=price.prices[3] %> Դ </td>
+                        <% }) %>
 
-                        </tr>
+                    </tr>
 
-                        <%}%>
+                    <%}%>
 
 
                     </tbody>
                 </table>
             </div>
                 <% }) %>
-            </div>
         </div>
-        <style>
-            .table {
-                display: block !important;
-            }
+    </div>
+    <style>
+        .collapseDiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            text-decoration: none !important;
+        }
 
-            .desc_card {
-                display: flex;
-                align-items: center;
-                margin: 10px;
-                padding-top: 10px;
-                max-height: 200px;
-                background: linear-gradient(to top, #56ccf2, #2f80ed);
-            }
+        .collapseDiv:focus {
+            color: unset !important;
+        }
 
-            .card {
-                min-height: 200px !important
-            }
+        .table {
+            display: block !important;
+        }
 
-            .desc_card div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
+        .desc_card {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            padding-top: 10px;
+            max-height: 200px;
+            background: linear-gradient(to top, #56ccf2, #2f80ed);
+        }
 
-            #colorlib-hero {
-                margin-bottom: 50px;
-            }
+        .card {
+            min-height: 200px !important
+        }
 
-            /* linear-gradient(58deg , #00b4db, #0083b0) */
-        </style>
-        <%- include('../layouts/footer.ejs')%>
+        .desc_card div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #colorlib-hero {
+            margin-bottom: 50px;
+        }
+
+        /* linear-gradient(58deg , #00b4db, #0083b0) */
+    </style>
+    <%- include('../layouts/footer.ejs')%>

@@ -16,7 +16,8 @@ const mediacalTours = new Schema({
     price_include: Object,
     price_exclude: Object,
     contraindications: Object,
-    instructions: Object
+    instructions: Object,
+    time:Object
   
 });
 
