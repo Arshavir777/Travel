@@ -1,7 +1,7 @@
-<%- include('./layouts/header.ejs') %>
+<%- include('../layouts/header.ejs') %>
 <style>
 /* linear-gradient(45deg,  #ff4e50, #f9d423  );*/
-	.med_tours{
+	.adv_tours{
   background: linear-gradient(to top, #56ccf2, #2f80ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */		text-decoration: none !important;
 		display: flex;
 		justify-content: center;
@@ -9,17 +9,16 @@
 		border-radius: 20px
 	}
 	</style>
-	<div class="colorlib-loader"></div>
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(/images/bujakanBackground.jpg);">
+			   	<li style="background-image: url(/images/adventureBackground.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row firstLayout">
 				   			<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h1>Բուժական</h1>
+				   					<h1>Արկածային</h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -36,17 +35,11 @@
 						<div class="row  justify-content-md-center">
 							<% data.forEach( elem => { %>
 							<a 
-							
-								href="/tour/medical-single/<%=elem.name %>"
-                                class=" rounded-md med_tours text-center  col-md-3   m-4 "
-                                style=" 
-                                height:400px!important ; 
-                                background-image: url(/images/<%=elem.img %>);
-                                  background-position: center;
-                                  background-size: cover;
-                                "
-                                >
-									<h2 style='color:white'><%=elem.title[lng]%></h2>		
+								style="height:400px!important"
+								href="<%=elem.single == true ? `/tour/adventure-single/${elem.name}` : `/tour/adventure-group/${elem.ID}`%>"
+								class=" rounded-md adv_tours text-center  col-md-3   m-4 "
+								>
+									<h2><%=elem.title[lng]%></h2>		
 							</a>
 							<%})%>
 								</div>
@@ -57,4 +50,4 @@
 					<!-- SIDEBAR-->
 			</div>
 
-		<%- include('./layouts/footer.ejs')%>
+		<%- include('../layouts/footer.ejs')%>

@@ -1,5 +1,4 @@
 <%- include('../layouts/header.ejs') %>
-<div class="colorlib-loader"></div>
 <aside id="colorlib-hero">
     <div class="flexslider">
         <ul class="slides ">
@@ -113,9 +112,9 @@
             <table class="teble table-bordered  table-success text-center table-hover ">
                 <thead>
                     <tr>
-                        <td></td>
+                        <td class="p-3"></td>
                         <%data.packages.forEach( pack => {%>
-                        <td>
+                        <td class="p-3">
                             <%=pack.name %> </td>
                         <% }) %>
 
@@ -123,10 +122,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1 Անձ</td>
+                        <td class="p-3">1 Անձ</td>
                         <%data.packages.forEach( pack => {%>
 
-                        <td>
+                        <td class="p-3">
                             <%=pack.prices[0] %> Դ
                         </td>
 
@@ -134,10 +133,10 @@
 
                     </tr>
                     <tr>
-                        <td>2 Անձ</td>
+                        <td class="p-3">2 Անձ</td>
                         <%data.packages.forEach( pack => {%>
 
-                        <td>
+                        <td class="p-3">
                             <%=pack.prices[1] %> Դ
                         </td>
 

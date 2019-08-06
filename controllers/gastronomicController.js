@@ -41,7 +41,7 @@ exports.gastronomicPage = (req, res ) => {
         }
        
         let result = response[0]
-        res.render('gastronomic.ejs',{
+        res.render('gastronomic/gastronomic.ejs',{
             header_title: result._id[lng],
             data: result.data
         })

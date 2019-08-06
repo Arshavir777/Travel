@@ -1,5 +1,4 @@
 <%- include('../layouts/header.ejs') %>
-<div class="colorlib-loader"></div>
 <aside id="colorlib-hero">
     <div class="flexslider">
         <ul class="slides ">
@@ -32,18 +31,24 @@
         </div>
     </div>
 
-    <h2 class="text-center mt-5 mb-3">Հետաքրքիր է իմանալ </h2>
-    <div class="row">
-            <div class="col-md-8 text-center ml-auto mr-auto">
-                <p>
-                    <%=data.text[lng]%>
-                </p>
+    <div class="accordion mt-5 mb-5" id="acc">
+        <div class="row justify-content-center ">
+
+            <a href="#demo" data-toggle="collapse" class=" collapseDiv alert alert-success col-md-10 col-sm-10   ">
+                    Հետաքրքիր է իմանալ
+                <span class="icon-plus float-right"></span>
+            </a>
+            <div id="demo" class="col-md-10 collapse" data-parent="#acc">
+                    <p>
+                            <%=data.text[lng]%>
+                        </p>
+
             </div>
         </div>
-
+    </div>
 
     <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-2">
         <div class=" mt-4  " style="overflow-x: auto; direction: ltr">
             <table class="table table-bordered  table-responsive table-info text-center">
                 <thead>
@@ -101,7 +106,7 @@
         </div>
     </div>
     <div class="row  justify-content-center">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card desc_card">
                 <img width="100px" height="100px" src="/images/schedule.png">
                 <div class="card-body text-center">
@@ -111,7 +116,7 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card desc_card ">
                 <img width="100px" height="100px" src="/images/price_include.png">
                 <div class="card-body text-center">
@@ -131,7 +136,18 @@
     .table {
         display: block !important;
     }
+   .collapseDiv {
+             margin:  5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            text-decoration: none !important;
+        }
 
+        .collapseDiv:focus {
+            color: unset !important;
+        }
     .desc_card {
         display: flex;
         align-items: center;

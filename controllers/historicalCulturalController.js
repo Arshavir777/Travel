@@ -27,7 +27,7 @@ exports.historicalCulturalPage = (req, res ) => {
         }
        
         let result = response[0]
-        res.render('historical-cultural.ejs',{
+        res.render('historicalCultural/historical-cultural.ejs',{
             header_title: result._id[lng],
             data: result.data
         })

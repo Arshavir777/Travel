@@ -9,7 +9,7 @@ exports.adventurePage = (req, res ) => {
         if(error){
             console.log(error)
         } 
-        res.render('adventure.ejs',{
+        res.render('adventure/adventure.ejs',{
            // header_title: result._id[lng],
             data: response
         })
@@ -35,7 +35,7 @@ exports.adventureGroup = (req, res) => {
             }
         }    
     ])  .exec((err, response) => {
-            res.render('adventureGroup.ejs',{
+            res.render('adventure/adventureGroup.ejs',{
                 data: response
             })
         })
@@ -52,9 +52,21 @@ exports.adventureSingle = (req, res) => {
                 data: response
             })
         })
+    }else if (destination === 'jeep_tour'){
+        Destination.findOne({name: destination}).exec( (error, response) => {
+            res.render('adventure/jeepTour.ejs', {
+                data: response
+            })
+        })
+    }else if (destination === '9in1'){
+            Destination.findOne({name: destination}).exec( (error, response) => {
+                res.render('adventure/9in1.ejs', {
+                    data: response
+                })
+            })
     }else{
         Destination.findOne({name: destination}).exec( (error, response) => {
-            res.render('single_tour.ejs', {
+            res.render('adventure/zipLaynSingle.ejs', {
                 data: response
             })
         })

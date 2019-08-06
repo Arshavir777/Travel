@@ -1,5 +1,4 @@
 <%- include('../layouts/header.ejs') %>
-<div class="colorlib-loader"></div>
 <aside id="colorlib-hero">
     <div class="flexslider">
         <ul class="slides ">
@@ -36,34 +35,59 @@
     <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
 <div class="row justify-content-center">
         <div style="overflow-x: auto; direction: ltr">
-            <table class="teble table-bordered  table-success text-center table-hover   ">
+        <%if(data.name === 'city_tour'){%>
+
+  <table class="teble table-bordered  table-success text-center table-hover mt-2  ">
                 <thead>
                     <th>
 
-                        <%for(let i = 1; i < data.prices.length/2 + 1; i++ ){ %>
-                            <td><%=i%> Անձ</td>
+                        <%for(let i = 1; i <= data.prices.length ; i++ ){ %>
+                            <td class="p-3"><%=i%> Անձ</td>
                         <% }%>
 
                     </th>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Գիդ</td>
+                        <td class="p-3">Գիդ</td>
                         <%data.prices.forEach( elem => {if(elem.head){%>
-                        <td><%=elem.price%> Դ</td>
+                        <td class="p-3"><%=elem.price%> Դ</td>
                         <%}})%>
-                        <td>-</td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <%}else{%>
+            <table class="teble table-bordered  table-success text-center table-hover  mt-2  ">
+                <thead>
+                    <th>
+
+                        <%for(let i = 1; i < data.prices.length/2 + 1; i++ ){ %>
+                            <td class="p-3"><%=i%> Անձ</td>
+                        <% }%>
+
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="p-3">Գիդ</td>
+                        <%data.prices.forEach( elem => {if(elem.head){%>
+                        <td class="p-3"><%=elem.price%> Դ</td>
+                        <%}})%>
+                        <td class="p-3">-</td>
                        
                         
                     </tr>
                     <tr>
-                        <td>Առանց Գիդ</td>
+                        <td class="p-3">Առանց Գիդ</td>
                         <%data.prices.forEach( elem => { if(!elem.head){%>
-                        <td><%=elem.price%> Դ</td>
+                        <td class="p-3"><%=elem.price%> Դ</td>
                         <%}})%>
                     </tr>
                 </tbody>
             </table>
+
+            <%}%>
         </div>
     </div>
 

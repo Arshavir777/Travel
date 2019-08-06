@@ -1,4 +1,5 @@
 <%- include('../layouts/header.ejs') %>
+
 <aside id="colorlib-hero">
     <div class="flexslider">
         <ul class="slides ">
@@ -30,39 +31,30 @@
             <span> <%=data.spec_description[lng]%></span>
         </div>
     </div>
+</div>
     <%# Gastronomic single tour prices %>
-    <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
-    
-    <div class="row justify-content-center">
-        <div style="overflow-x: auto; direction: ltr" >
-            <table class="teble table-bordered  table-success text-center table-hover   ">
-                <thead>
-                    <th>
-                    
-                    <%for(let i = 1; i <= data.prices[0].head.length; i++ ){ %>
-                    <td class='p-3'><%=i%> Անձ</td>
-                    <% }%>
+    <h2 class="text-center mt-2 mb-1">Գնացուցակ</h2>
+<div class="row justify-content-center">
+        <div style="overflow-x: auto; direction: ltr">
+       
 
-                    </th>
-                </thead>
+            <table class="teble table-bordered  table-success text-center table-hover  mt-2  ">
+               
                 <tbody>
-                    <tr>
-                        <td class='p-3'>Գիդ</td>
-                        <%data.prices[0].head.forEach( elem => {%>
-                        <td class='p-3'><%=elem%> Դ</td>
-                        <%})%>
-                    </tr>
-                    <tr>
-                        <td class='p-3'>Ուղեկցորդ</td>
-                        <%data.prices[0].guide.forEach( elem => {%>
-                        <td class='p-3'><%=elem%> Դ</td>
-                        <%})%>
-                    </tr>
+             
+                        <%data.packages.forEach( elem => {%>
+                        <tr>
+                                <td class="p-3"><%=elem.name%> </td>
+                                <td class="p-3"><%=elem.price%> Դ</td>
+                        </tr>
+                       
+                        <%})%> 
+                 
+                   
                 </tbody>
             </table>
         </div>
     </div>
-</div>
 
 <div class="row ">
     <div class="col-md-3">

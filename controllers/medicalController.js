@@ -7,7 +7,7 @@ exports.medicalPage = (req, res ) => {
         if(error){
             console.log(error)
         } 
-        res.render('medical.ejs',{
+        res.render('medical/medical.ejs',{
            // header_title: result._id[lng],
             data: response
         })

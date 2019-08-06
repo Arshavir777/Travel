@@ -1,4 +1,4 @@
-<%- include('./layouts/header.ejs') %>
+<%- include('../layouts/header.ejs') %>
 <style> 
 *{
 	font-family: armArtur;
@@ -7,17 +7,16 @@ h2{
 	font-family: armArtur;
 }
 </style>
-	<div class="colorlib-loader"></div>
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(/images/gastronomic.jpg);">
+			   	<li style="background-image: url(/images/historical_cultural.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row firstLayout">
 				   			<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h1>Գաստրոնոմիկ</h1>
+				   					<h1>Պատմամշակութային</h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -34,20 +33,20 @@ h2{
 						<div class="row">
 							<div class="col-md-12">
 								<div class="wrap-division">
-						
+								
 									<div class="row">
 											<% data.forEach(function(dest) { %>
-													<div class="col-md-12 animate-box">
+													<div class="col-md-12 animate-box ">
 													<div class="room-wrap">
 														<div class="row">
 															<div class="col-md-6 col-sm-6">
-																<div class="room-img" style="background-image: url(/images/<%=dest.img %>);"></div>
+																<div class="room-img rounded" style="background-image: url(/images/<%=dest.img %>);"></div>
 															</div>
 															<div class="col-md-6 col-sm-6">
 																<div class="desc text-center">
 																	<h2 class='text-center text-danger'><%=dest.title[lng]%></h2>
 																	<p><%=dest.description[lng].split(':')[0] + ':' + dest.description[lng].split(':')[1] %>..</p>
-																	<a href="/tour/gastronomic/<%=dest.name%>" class="btn readMore btn-outline-info" >Մանրամասներ</a>
+																	<a href="/tour/historical-cultural/<%=dest.name%>" class="btn readMore btn-outline-info" >Մանրամասներ</a>
 																</div>
 															</div>
 														</div>
@@ -56,7 +55,6 @@ h2{
 
 
 											<% }); %>
-										
 									</div>
 								</div>
 							</div>
@@ -67,4 +65,4 @@ h2{
 			</div>
 		</div>
 
-		<%- include('./layouts/footer.ejs')%>
+		<%- include('../layouts/footer.ejs')%>

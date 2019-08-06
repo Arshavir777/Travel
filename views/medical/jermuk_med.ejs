@@ -1,5 +1,4 @@
 <%- include('../layouts/header.ejs') %>
-<div class="colorlib-loader"></div>
 <aside id="colorlib-hero">
     <div class="flexslider">
         <ul class="slides ">
@@ -61,7 +60,7 @@
         <div class="col-md-6">
             <h2 class="text-center text-info ">Նկարագրություն</h2>
             <br>
-            <div class="col-md-8 text-center ml-auto mr-auto border border-info rounded ">
+            <div class="col-md-8 text-center ml-auto mr-auto  ">
                 <p>
                     <%=data.description[lng]%>
                 </p>
@@ -167,9 +166,9 @@
                 <thead>
 
                     <tr>
-                        <td> </td>
+                        <td class='p-3'> </td>
                         <%elem.prices.forEach( price => {%>
-                        <td>
+                        <td class='p-3'>
                             <%=price.date %>
                         </td>
                         <% }) %>
@@ -178,34 +177,34 @@
 
                 <tbody>
                     <tr>
-                        <td>1 Անձ</td>
+                        <td class='p-3'>1 Անձ</td>
                         <%elem.prices.forEach( price => {%>
-                        <td>
+                        <td class='p-3'>
                             <%=price.prices[0] %> Դ </td>
                         <% }) %>
 
                     </tr>
                     <tr>
-                        <td>2 Անձ</td>
+                        <td class='p-3'>2 Անձ</td>
                         <%elem.prices.forEach( price => {%>
-                        <td>
+                        <td class='p-3'>
                             <%=price.prices[1] %> Դ </td>
                         <% }) %>
 
                     </tr>
                     <%if(elem.title['en'] == 'Olimpia') {%>
                     <tr>
-                        <td>3 Անձ</td>
+                        <td class='p-3'>3 Անձ</td>
                         <%elem.prices.forEach( price => {%>
-                        <td>
+                        <td class='p-3'>
                             <%=price.prices[2] %> Դ </td>
                         <% }) %>
 
                     </tr>
                     <tr>
-                        <td>4 Անձ</td>
+                        <td class='p-3'>4 Անձ</td>
                         <%elem.prices.forEach( price => {%>
-                        <td>
+                        <td class='p-3'>
                             <%=price.prices[3] %> Դ </td>
                         <% }) %>
 
