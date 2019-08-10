@@ -6,7 +6,8 @@ const tourCategory = new Schema({
     title: Object,
     name: String,
     tour_id: Number,
-    single: Boolean
+    single: Boolean,
+    image:String
 });
 
 module.exports = mongoose.model('tc', tourCategory, 'tour_category');
