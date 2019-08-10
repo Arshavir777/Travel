@@ -26,7 +26,6 @@
             <p>
                 <%=data.description[lng]%>
             </p>
-            <br>
             <span> <%=data.spec_description[lng]%></span>
         </div>
     </div>
@@ -47,10 +46,10 @@
         </div>
     </div>
 
-    <h2 class="text-center mt-2 mb-1">Գնացուցակ </h2>
+    <h2 class="text-center mt-2 mb-3">Գնացուցակ </h2>
     <div class="row justify-content-center mt-2">
         <div class=" mt-4  " style="overflow-x: auto; direction: ltr">
-            <table class="table table-bordered  table-responsive table-info text-center">
+            <table class="table table-bordered  table-responsive table-info text-center mb-4">
                 <thead>
                     <tr>
                         <td> </td>
@@ -107,7 +106,7 @@
     </div>
     <div class="row  justify-content-center">
         <div class="col-md-4">
-            <div class="card desc_card">
+            <div class="card desc_card" style=" max-height: 400px;">
                 <img width="100px" height="100px" src="/images/schedule.png">
                 <div class="card-body text-center">
                     <h5 class="card-text">Ժամանակահատվածը</h5>
@@ -117,7 +116,7 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card desc_card ">
+            <div class="card desc_card"  style=" max-height: 400px;">
                 <img width="100px" height="100px" src="/images/price_include.png">
                 <div class="card-body text-center">
                     <h5 class="card-text">Արժեքը <br>ներառում է</h5>
@@ -148,15 +147,7 @@
         .collapseDiv:focus {
             color: unset !important;
         }
-    .desc_card {
-        display: flex;
-        align-items: center;
-        margin: 10px;
-        padding-top: 10px;
-        max-height: 400px;
-        background: linear-gradient(to top, #56ccf2, #2f80ed);
 
-    }
 
     .card {
         min-height: 400px !important

@@ -19,10 +19,8 @@ exports.medicalPage = (req, res ) => {
 // data for medical Single Page 
 exports.singlePage = (req, res) => {
     let dest =  req.params.tour
-    console.log(dest)
     if (dest === 'jermuk_med' ) {
         MedTours.findOne({name: "jermuk_med"}).exec( (error, response) => {
-            console.log(response)
             res.render('medical/jermuk_med.ejs', {
                 data: response
             })

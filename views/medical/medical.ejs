@@ -8,6 +8,14 @@
 		align-items: center;
 		border-radius: 20px
 	}
+	.adv_tours{
+		border-radius: 20px;
+		text-decoration: none!important
+	}
+	.adv_image{
+		background-size: cover;
+		background-position: center;
+	}
 	</style>
 		<aside id="colorlib-hero">
 			<div class="flexslider">
@@ -34,19 +42,21 @@
 					<div class="col-md-12">
 						<div class="row  justify-content-md-center">
 							<% data.forEach( elem => { %>
-							<a 
-							
-								href="/tour/medical-single/<%=elem.name %>"
-                                class=" rounded-md med_tours text-center  col-md-3   m-4 "
-                                style=" 
-                                height:400px!important ; 
-                                background-image: url(/images/<%=elem.img %>);
-                                  background-position: center;
-                                  background-size: cover;
-                                "
-                                >
-									<h2 style='color:white'><%=elem.title[lng]%></h2>		
-							</a>
+								<a
+								href="/tour/medical-single/<%=elem.name %>"								class=" rounded-md adv_tours text-center  col-md-3   m-4  "
+								style="height:400px!important; "
+								>
+									<div
+									class="adv_image"
+									style="background-image: url(/images/<%=elem.img%>);height: 300px; width:100%;border-radius: 20px;"
+									href="<%=elem.single == true ? `/tour/adventure-single/${elem.name}` : `/tour/adventure-group/${elem.ID}`%>"
+									>
+									</div>
+									<br>
+								<h2 class="text-center"><%=elem.title[lng]%></h2>
+								
+
+								</a>
 							<%})%>
 								</div>
 							</div>

@@ -32,12 +32,12 @@
     </div>
 </div>
     <%# Gastronomic single tour prices %>
-    <h2 class="text-center mt-2 mb-1">Գնացուցակ</h2>
+    <h2 class="text-center mt-2 mb-3">Գնացուցակ</h2>
 <div class="row justify-content-center">
         <div style="overflow-x: auto; direction: ltr">
        
 
-            <table class="teble table-bordered  table-success text-center table-hover  mt-2  ">
+            <table class="teble table-bordered  table-info text-center table-hover  mt-2 mb-4 ">
                 <thead>  
                     <tr>    
                         <%data.prices.forEach(elem => { %>
@@ -50,9 +50,12 @@
 
                     <tr>
                       
-                        <%data.prices.forEach( elem => {%>
-                        <td class="p-3"><%=elem.price%> Դ</td>
-                        <%})%> 
+                        <%data.prices.forEach( (elem, index)  => {%>
+                            <%if(index === 0){%>
+                                <td class="p-3"><%=elem.price%> </td>
+                                <%}else{%>
+                            <td class="p-3"><%=elem.price%> Դ</td>
+                        <% }})%> 
                     </tr>
                    
                 </tbody>
@@ -107,15 +110,6 @@
         display: block !important;
     }
 
-    .desc_card {
-        display: flex;
-        align-items: center;
-        margin: 10px;
-        padding-top: 10px;
-        max-height: 300px;
-        background: linear-gradient(to top, #56ccf2, #2f80ed);
-
-    }
 
     .card {
         min-height: 300px !important
