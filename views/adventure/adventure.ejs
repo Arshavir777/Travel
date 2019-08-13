@@ -1,64 +1,64 @@
 <%- include('../layouts/header.ejs') %>
 <style>
-/* linear-gradient(45deg,  #ff4e50, #f9d423  );*/
-	.adv_tours{
+	/* linear-gradient(45deg,  #ff4e50, #f9d423  );*/
+	.adv_tours {
 		border-radius: 20px;
-		text-decoration: none!important
+		text-decoration: none !important
 	}
-	.adv_image{
+
+	.adv_image {
 		background-size: cover;
 		background-position: center;
 	}
-	</style>
-		<aside id="colorlib-hero">
-			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(/images/adventureBackground.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row firstLayout">
-				   			<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h1>Արկածային</h1>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
-		</aside>
-
-		<div class="colorlib-wrap">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="row  justify-content-md-center">
-							<% data.forEach( elem => { %>
-								<a
-								href="<%=elem.single == true ? `/tour/adventure-single/${elem.name}` : `/tour/adventure-group/${elem.ID}`%>"
-								class=" rounded-md adv_tours text-center  col-md-3   m-4  "
-								style="height:400px!important; "
-								>
-									<div
-									class="adv_image"
-									style="background-image: url(/images/<%=elem.image%>);height: 300px; width:100%;border-radius: 20px;"
-									href="<%=elem.single == true ? `/tour/adventure-single/${elem.name}` : `/tour/adventure-group/${elem.ID}`%>"
-									>
-									</div>
-									<br>
-								<h2 class="text-center"><%=elem.title[lng]%></h2>
-								
-
-								</a>
-						
-							<%})%>
-								</div>
+</style>
+<aside id="colorlib-hero">
+	<div class="flexslider">
+		<ul class="slides">
+			<li style="background-image: url(/images/adventureBackground.jpg);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row firstLayout">
+						<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
+							<div class="slider-text-inner text-center">
+								<h1><%=__('Adventure')%></h1>
 							</div>
 						</div>
 					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</aside>
 
-					<!-- SIDEBAR-->
+<div class="colorlib-wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row  justify-content-md-center">
+					<% data.forEach( elem => { %>
+					<a href="<%=elem.single == true ? `/tour/adventure-single/${elem.name}` : `/tour/adventure-group/${elem.ID}`%>"
+						class=" rounded-md adv_tours text-center  col-md-3   m-4   "
+						style="height:400px!important; ">
+						<div class="img-hover-zoom" style="border-radius: 20px;">
+							<div class="adv_image"
+							style="background-image: url(/images/<%=elem.image%>);height: 300px; width:100%;"
+							href="<%=elem.single == true ? `/tour/adventure-single/${elem.name}` : `/tour/adventure-group/${elem.ID}`%>">
+						</div>
+						<br>
+					
+						</div>	
+						
+						<h2 class="text-center"><%=elem.title[locale]%></h2>
+
+					</a>
+
+					<%})%>
+				</div>
 			</div>
+		</div>
+	</div>
 
-		<%- include('../layouts/footer.ejs')%>
+	<!-- SIDEBAR-->
+</div>
+
+<%- include('../layouts/footer.ejs')%>

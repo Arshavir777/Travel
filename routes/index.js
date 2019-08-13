@@ -2,8 +2,10 @@ import express from 'express'
 let router = express.Router()
 
 // import Controllers
-let tourController = require('../controllers/indexController' )
+let indexController = require('../controllers/indexController' )
 
-router.get('/', tourController.index)
+router.get('/', indexController.index)
+
+router.post('/sendMessage', indexController.sendMessage)
 
 module.exports = router

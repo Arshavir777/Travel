@@ -2,9 +2,13 @@
   font-family: armArtur;
   src: url('../fonts/GHEAMariamBld.otf');
 }
+.siteBackground{
+  background-color: lightyellow
+}
 .nav-item{
   font-family: armArtur
 }
+
 .navbar-toggler {
  border: unset
 }
@@ -30,8 +34,17 @@
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(231, 64, 13, 0.2), 0 6px 20px 0 rgba(247, 74, 6, 0.19);
 }
+.historicalHeaderName{
+  font-size: 2.5rem !important;
+  font-family: armArtur;
+  color: white;
+}
 @media screen and (max-width: 992px) {
-
+  .historicalHeaderName{
+    font-size: 1.4rem !important;
+    font-family: armArtur;
+    color: white;
+  }
   .service_icons{
     width: auto!important
   }
@@ -104,9 +117,6 @@
     transition: background-color 400ms linear;
   } */
 
-  .activeMenu{
-    border-bottom:2px solid #3ecf8e !important;
-  }
 
   .overlay {
     height: 100%;
@@ -204,4 +214,40 @@
     max-height: 300px;
     background: aliceblue;
 
+}
+
+/*  */
+.img-hover-zoom {
+  max-height: 300px!important;
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom div {
+ 
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover div {
+  transform: scale(1.5);
+}
+
+/* nav items hover */
+
+.link-3 {
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+.link-3:hover {
+  background-color: #ffffff;
+  color:  #0083b0!important;
+}
+.activeMenu{
+  background-color: #ffffff;
+  color:  #0083b0!important;
 }

@@ -9,7 +9,7 @@
                         <div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
                             <div class="slider-text-inner text-center">
                                 <h1>
-                                    <%=data.title[lng]%>
+                                    <%=data.title[locale]%>
                                 </h1>
                             </div>
                         </div>
@@ -23,11 +23,11 @@
     <div>
 
 
-        <h2 class="text-center text-info ">Նկարագրություն</h2>
+        <h2 class="text-center text-info "><%=__('Description')%></h2>
         <br>
         <div class="col-md-8 text-center ml-auto mr-auto">
             <p>
-                <%=data.description[lng]%>
+                <%=data.description[locale]%>
             </p>
     
 
@@ -46,7 +46,7 @@
             <div id="demo" class="col-md-10 collapse" data-parent="#acc">
                 <p>
 
-                    <%=data.med_rooms[lng]%>
+                    <%=data.med_rooms[locale]%>
                 </p>
 
             </div>
@@ -61,7 +61,7 @@
             <div id="demo3" class="col-md-10 collapse" data-parent="#acc">
                 <p>
 
-                    <%=data.instructions[lng]%>
+                    <%=data.instructions[locale]%>
                 </p>
 
             </div>
@@ -75,7 +75,7 @@
             </a>
             <div id="demo2" class="col-md-10 collapse" data-parent="#acc">
                 <p>
-                    <%=data.contraindications[lng]%>
+                    <%=data.contraindications[locale]%>
                 </p>
 
             </div>
@@ -83,7 +83,7 @@
 
     </div>
 
-    <h2 class="text-center mb-3 mt-3">Տրանսպորտի Գումար</h2>
+    <h2 class="text-center mb-3 mt-3"><%=__('Transportation-Amount')%></h2>
     <div class="row justify-content-center">
         <div class="col-md-3">
             <div class="card desc_card">
@@ -157,7 +157,7 @@
                 <img width="100px" height="100px" src="/images/schedule.png">
                 <div class="card-body text-center">
                     <h5 class="card-text">Ժամանակահատվածը</h5>
-                    <div><%=data.time[lng]%> </div>
+                    <div><%=data.time[locale]%> </div>
                 </div>
             </div>
         </div>
@@ -167,7 +167,7 @@
                 <img width="100px" height="100px" src="/images/price_include.png">
                 <div class="card-body text-center">
                     <h5 class="card-text">Արժեքը <br>ներառում է</h5>
-                    <div><%=data.price_include [lng]%></div>
+                    <div><%=data.price_include [locale]%></div>
                 </div>
             </div>
         </div>
@@ -176,7 +176,7 @@
                 <img width="100px" height="100px" src="/images/price_exclude.png">
                 <div class="card-body text-center">
                     <h5 class="card-text">Արժեքը <br>չի ներառում</h5>
-                    <div><%=data.price_exclude [lng]%></div>
+                    <div><%=data.price_exclude [locale]%></div>
                 </div>
             </div>
         </div>

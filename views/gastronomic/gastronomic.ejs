@@ -16,7 +16,7 @@ h2{
 			   			<div class="row firstLayout">
 				   			<div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h1>Գաստրոնոմիկ</h1>
+				   					<h1><%=header_title%></h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -35,6 +35,12 @@ h2{
 								<div class="wrap-division">
 						
 									<div class="row">
+										<% var div; 
+										if (locale === 'am'){
+												div = ':'
+										}else{
+												div = '.'
+										}%>
 											<% data.forEach(function(dest) { %>
 													<div class="col-md-12 animate-box">
 													<div class="room-wrap">
@@ -44,9 +50,9 @@ h2{
 															</div>
 															<div class="col-md-6 col-sm-6">
 																<div class="desc text-center">
-																	<h2 class='text-center text-danger'><%=dest.title[lng]%></h2>
-																	<p><%=dest.description[lng].split(':')[0] + ':' + dest.description[lng].split(':')[1] %>..</p>
-																	<a href="/tour/gastronomic/<%=dest.name%>" class="btn readMore btn-outline-info" >Ավելին</a>
+																	<h2 class='text-center text-danger'><%=dest.title[locale]%></h2>
+																	<p><%=dest.description[locale].split(div)[0] + div + dest.description[locale].split(div)[1] %>..</p>
+																	<a href="/tour/gastronomic/<%=dest.name%>" class="btn readMore btn-outline-info" ><%=__('More')%></a>
 																</div>
 															</div>
 														</div>

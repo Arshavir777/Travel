@@ -8,7 +8,7 @@
                     <div class="row firstLayout">
                         <div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
                             <div class="slider-text-inner text-center">
-                                <h1><%=data.title[lng]%></h1>
+                                <h1><%=data.title[locale]%></h1>
                             </div>
                         </div>
                     </div>
@@ -19,14 +19,14 @@
 </aside>
 
 <div class="container">
-    <h2 class="text-center text-info ">Նկարագրություն</h2>
+    <h2 class="text-center text-info "><%=__('Description')%></h2>
     <br>
     <div class="row">
         <div class="col-md-8 text-center ml-auto mr-auto">
             <p>
-                <%=data.description[lng]%>
+                <%=data.description[locale]%>
             </p>
-            <span> <%=data.spec_description[lng]%></span>
+            <span> <%=data.spec_description[locale]%></span>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
             </a>
             <div id="demo" class="col-md-10 collapse" data-parent="#acc">
                     <p>
-                            <%=data.text[lng]%>
+                            <%=data.text[locale]%>
                         </p>
 
             </div>
@@ -120,7 +120,7 @@
                 <img width="100px" height="100px" src="/images/price_include.png">
                 <div class="card-body text-center">
                     <h5 class="card-text">Արժեքը <br>ներառում է</h5>
-                    <div><%=data.price_include [lng]%></div>
+                    <div><%=data.price_include [locale]%></div>
                 </div>
             </div>
         </div>

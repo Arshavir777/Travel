@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<head>
+
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><%=__("Suneey Service")%></title>
@@ -26,7 +27,7 @@
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
-	
+
 	<!-- Date Picker -->
 	<link rel="stylesheet" href="/css/bootstrap-datepicker.css">
 	<!-- Flaticons  -->
@@ -47,80 +48,109 @@
 	<!-- Flag Icons  -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
 	<link rel='stylesheet' href="/css/index.css">
-<style>
-.lback{background:black}
-*{
-	font-family: armArtur
-}
-h1,h2,h3,h4,h5{
-	font-family: armArtur
-}
-body{
-	background:lightyellow
-}
-</style>
+	<style>
+		.lback {
+			background: black
+		}
 
-	</head>
-<body>
+		* {
+			font-family: armArtur
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			font-family: armArtur
+		}
+	</style>
+
+</head>
+
+<body class="siteBackground">
 	<div class="colorlib-loader "></div>
+	<% if( success_messages.length > 0 ){ %>
+	<div style="position: absolute; z-index:9999; top:80px;right:0"
+		class="alert alert-success alert-dismissible fade show" role="alert">
+		<strong>✔ <%=__('MessageSuccess')%> .
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+	</div>
+	<% } %>
 
-<nav class="navbar navbar-expand-lg navbar-light scrolling-navbar ">
-  <a class="navbar-brand" href="/">
-	<img src="/images/logo verjnakan [Converted].png"  height="50px">
-  </a>
-  <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">
-	 
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav  ml-auto" >
-      <li class="nav-item active">
-		<a class="nav-link" href="/">
-			<%=__('Home')%> <span class="sr-only">(current)</span>
+
+	<nav class="navbar navbar-expand-lg navbar-light scrolling-navbar ">
+		<a class="navbar-brand" href="/">
+			<img src="/images/logo verjnakan [Converted].png" height="50px">
 		</a>
-      </li>
-      <li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-			<%=__('Tours')%> 
-		</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="/tour/historical-cultural">
-			<%=__('Historical-Cultural')%>
-		</a>
-        <a class="dropdown-item" href="/tour/gastronomic">
-			<%=__('Gastronomic')%>
-		</a>
-        <a class="dropdown-item" href="/tour/adventure">
-			<%=__('Adventure')%>
-		</a>
-		<a class="dropdown-item" href="/tour/medical">
-			<%=__('Treatment')%>
-		</a>
-      </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/gallery">
-			<%=__('Gallery')%>
-		</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">
-			<%=__('About As')%>
-		</a>
-      </li>
-	  <li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<%if(lng == 'am'){%>	
-					 Հայերեն <span class="flag-icon flag-icon-am"> </span>
-				<%}%>
-				<%if(lng == 'en'){%>	
-					 English <span class="flag-icon flag-icon-us"> </span>
-				<%}%>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon">
+
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav  ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link link-3" href="/">
+						<%=__('Home')%> <span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link link-3 dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						<%=__('Tours')%>
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="/tour/historical-cultural">
+							<%=__('Historical-Cultural')%>
+						</a>
+						<a class="dropdown-item" href="/tour/gastronomic">
+							<%=__('Gastronomic')%>
+						</a>
+						<a class="dropdown-item" href="/tour/adventure">
+							<%=__('Adventure')%>
+						</a>
+						<a class="dropdown-item" href="/tour/medical">
+							<%=__('Therapeutic')%>
+						</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link link-3" href="/gallery">
+						<%=__('Gallery')%>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link link-3" href="/about">
+						<%=__('AboutAs')%>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link link-3 dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<%if(locale == 'am'){%>
+						Հայերեն <span class="flag-icon flag-icon-am"> </span>
+						<%}%>
+				<%if(locale == 'en'){%>
+						English <span class="flag-icon flag-icon-us"> </span>
+						<%}%>
+				<%if(locale == 'ru'){%>
+						Русский <span class="flag-icon flag-icon-ru"> </span>
+						<%}%>
 
 			</a>
 			<div class="dropdown-menu" aria-labelledby="dropdown09">
-				<%# <a class="dropdown-item language btn btn-success" lng='en' ><span class="flag-icon flag-icon-us"> </span>  English</a> %>
-				<a class="dropdown-item language btn btn-success" lng='am'> Հայերեն <span class="flag-icon flag-icon-am"> </span> </a>
+			 	<a class="dropdown-item language btn btn-success" lng='en' >
+					English <span class="flag-icon flag-icon-us"> </span> 
+				</a> 
+				<a class="dropdown-item language btn btn-success" lng='am'>
+					 Հայերեն <span class="flag-icon flag-icon-am"> </span> 
+				</a>
+				
+				<a class="dropdown-item language btn btn-success" lng='ru'>
+						Русский <span class="flag-icon flag-icon-ru"> </span> 
+				   </a>
 			</div>
 		</li>
 
@@ -134,42 +164,44 @@ body{
 			<div class="modal-header">
 			  <h5 class="modal-title" id="exampleModalLabel">
 					<%=__("Let's plan your trip") %>
-			  </h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body ">
-				<div class='row '>
-					<div class="card text-white bg-info mb-3 col-md-4 text-center">
-							<div class="card-body">
-							  <h5 class="card-title "><%=__("Individual")%></h5>
-							  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+		</div>
+		<div class="modal-body ">
+			<div class='row '>
+				<div class="card text-white bg-info mb-3 col-md-4 text-center">
+					<div class="card-body">
+						<h5 class="card-title "><%=__("Individual")%></h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
 					</div>
 				</div>
-					<div class="card text-white bg-info mb-3 col-md-4 text-center">
-							<div class="card-body">
-							  <h5 class="card-title"><%=__("Group")%></h5>
-							  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
+				<div class="card text-white bg-info mb-3 col-md-4 text-center">
+					<div class="card-body">
+						<h5 class="card-title"><%=__("Group")%></h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
+					</div>
 				</div>
 			</div>
 
-			</div>
-		  </div>
 		</div>
- </div>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/5d0e815b36eab9721118bd28/default';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})()
+		</div>
+		</div>
+		</div>
+		<!--Start of Tawk.to Script-->
+		<script type="text/javascript">
+			var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+			(function () {
+				var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+				s1.async = true;
+				s1.src = 'https://embed.tawk.to/5d0e815b36eab9721118bd28/default';
+				s1.charset = 'UTF-8';
+				s1.setAttribute('crossorigin', '*');
+				s0.parentNode.insertBefore(s1, s0);
+			})()
 
 // for (var i = 0; i < document.links.length; i++) {
 //     if (document.links[i].href == document.URL && document.links[i].classList.indexOf('nav-item') != -1 ) {
@@ -177,5 +209,5 @@ body{
 //     }
 // }
 
-</script>
-	<!--End of Tawk.to Script-->
+		</script>
+		<!--End of Tawk.to Script-->

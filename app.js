@@ -4,18 +4,32 @@ import i18n from 'i18n'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import './i18n'
-const mongoose = require('mongoose');
+const session = require('express-session')
+const flash = require('connect-flash')
+const dotenv = require('dotenv')
+const mongoose = require('mongoose')
 const tourRouter = require( './routes/tours')
 const indexRouter = require( './routes/index')
 const app = express()
 const port = (process.env.PORT || 3000)
 const uri = process.env.MONGO_URL || "mongodb+srv://arshavir:9mywhJTYX48nVVk@cluster0-lokck.mongodb.net/travel?retryWrites=true&w=majority"
 mongoose.connect(uri, { useNewUrlParser: true } )
+dotenv.config()
+
 //
-app.use(bodyParser.json())
+app.use(session({ cookie: { maxAge: 2000 }, 
+  secret: 'woot',
+  resave: false, 
+  saveUninitialized: false}));
+
 app.use(cookieParser())
 app.use(i18n.init)
-//
+app.use(flash())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 app.set("view engine", "ejs")
 app.set('views', __dirname + '/views')
 //
@@ -28,9 +42,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //
 app.use(function (req, res, next) {
     res.setLocale(req.cookies.lng || 'am')
-    res.locals = {
-      lng: req.cookies.lng || 'am'
-    };
+    // res.locals.lng = req.cookies.lng || 'am'
+    res.locals.success_messages = req.flash('success_messages');
     next();
  });
 app.use('/tour', tourRouter)

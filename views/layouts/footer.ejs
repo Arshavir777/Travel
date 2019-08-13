@@ -48,23 +48,23 @@
 						<!-- End Row -->
 						<!-- Start Row -->
 						<div class="row">
-
-							<form id="contactForm">
+							<form id="messageForm" action="/sendMessage" method="POST">
 								<div class="row">
+
 									<div class="col-md-6">
 										<div class="form-group">
 											<input type="text" class="form-control" id="name" name="name"
 												placeholder="<%=__('Name')%>" required
 												data-error="Please enter your name">
-											<div class="help-block with-errors"></div>
+
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<input type="text" placeholder="<%=__("Subject")%>" id="msg_subject"
-												class="form-control" name="msg_subject" required
+											<input type="text" placeholder="<%=__('Subject')%>" name="subject"
+												id="msg_subject" class="form-control" name="msg_subject" required
 												data-error="Please enter your subject">
-											<div class="help-block with-errors"></div>
+
 										</div>
 									</div>
 									<div class="col-md-12">
@@ -72,7 +72,7 @@
 											<input type="text" class="form-control" id="email" name="email"
 												placeholder="<%=__("Email")%>" required
 												data-error="Please enter your Email">
-											<div class="help-block with-errors"></div>
+
 										</div>
 									</div>
 									<div class="col-md-12">
@@ -80,19 +80,18 @@
 											<textarea class="form-control" id="message" name="message"
 												placeholder="<%=__("Write Message")%>" rows="4"
 												data-error="Write your message" required></textarea>
-											<div class="help-block with-errors"></div>
+
 										</div>
 										<div class="submit-button">
-											<button class="btn btn-common " id="submit"
-												type="submit"><%=__("Submit")%></button>
-											<div id="msgSubmit" class="h3 hidden"></div>
-											<div class="clearfix"></div>
+											<button type="submit" class="btn btn-common " id="submit">
+												<%=__("Submit")%>
+											</button>
+
 										</div>
 									</div>
-									<!-- </div>            
-										 </form> -->
-								</div>
 
+								</div>
+							</form>
 						</div>
 						<!-- End Row -->
 					</div>
@@ -102,9 +101,7 @@
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;
-					<script>document.write(new Date().getFullYear());</script> All rights reserved |
+					<span><%=__('Copyright')%></span>
 				</p>
 			</div>
 		</div>

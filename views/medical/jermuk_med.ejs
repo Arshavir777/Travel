@@ -9,7 +9,7 @@
                         <div class="col-md-6 offset-md-3 col-sm-12 col-xs-12 slider-text">
                             <div class="slider-text-inner text-center">
                                 <h1>
-                                    <%=data.title[lng]%>
+                                    <%=data.title[locale]%>
                                 </h1>
                             </div>
                         </div>
@@ -22,11 +22,11 @@
 <div class="container ">
     <div class="row justify-content-center">
             <div class="col-md-12">
-                    <h1 class="text-center text-info ">Նկարագրություն</h1>
+                    <h1 class="text-center text-info "><%=__('Description')%></h1>
                     <br>
                     <div class="col-md-8 text-center ml-auto mr-auto  ">
                         <p>
-                            <%=data.description[lng]%>
+                            <%=data.description[locale]%>
                         </p>
                         <br><br>
         
@@ -77,7 +77,7 @@
             </a>
             <div id="demo" class="col-md-10 collapse" data-parent="#acc">
                 <ul>
-                    <%data.diseases[lng].forEach( elem => {%>
+                    <%data.diseases[locale].forEach( elem => {%>
                     <li>
                         <%=elem%>
                     </li>
@@ -99,7 +99,7 @@
                     <div class="col-md-6 ">
                         <h4 class="text-center">Անվճար</h4>
                         <ul>
-                            <%data.med_center.free[lng].forEach( elem => {%>
+                            <%data.med_center.free[locale].forEach( elem => {%>
                             <li>
                                 <%=elem%>
                             </li>
@@ -111,7 +111,7 @@
                         <h4 class="text-center">Վճարովի</h4>
 
                         <ul>
-                            <%data.med_center.paid[lng].forEach( elem => {%>
+                            <%data.med_center.paid[locale].forEach( elem => {%>
                             <li>
                                 <%=elem%>
                             </li>
@@ -128,7 +128,7 @@
     </div>
 
 
-    <h1 class="text-center">Տրանսպորտի Գումար</h1>
+    <h1 class="text-center"><%=__('Transportation-Amount')%></h1>
     <div class="row justify-content-center  mt-5">
         <div class="col-md-3">
             <div class="card desc_card">
@@ -162,7 +162,7 @@
                 <br><br> <br>
                 <%}%>
             <h3 class="text-center mt-2 mb-3">
-                <%=elem.title[lng] %>
+                <%=elem.title[locale] %>
             </h3>
             <table class="table table-bordered table-responsive  table-info text-center mb-4 mt-4">
                 <thead>

@@ -49,24 +49,24 @@
 		<div class="row justify-content-center   service_icons" style="width: 100%; float:left; margin-bottom:90px; margin-top: 100px">
 			<a href="/tour/historical-cultural" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main">
 						<img src="/images/historical_cultural_logo.png" width="200px" height="200px">
-						<h4>Պատմամշակութային </h4>
+						<h4><%=__('Historical-Cultural')%> </h4>
 				</a>
 				<a href="/tour/gastronomic" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main ">
-							<img src="/images/food_logo.jpg" width="200px" height="200px">
-							<h4>Գաստրոնոմիկ </h4>
+							<img src="/images/food_logo.png" width="200px" height="200px">
+							<h4><%=__('Gastronomic')%> </h4>
 				</a>
 				<a href="/tour/adventure" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main">
 						<img src="/images/adventure_logo.png" width="200px" height="200px">
-						<h4>Արկածային </h4>
+						<h4><%=__('Adventure')%> </h4>
 				</a>
 				<a href="/tour/medical" class="col-md-3 col-sm-6 col-xs-12 text-center tour_logos_main">
 						<img src="/images/med_logo.png" width="200px" height="200px">
-						<h4>Բուժական </h4>
+						<h4><%=__('Therapeutic')%> </h4>
 				</a>
 			</div>
 
 
-		<div class="colorlib-tour colorlib-light-grey">
+		<div class="colorlib-tour colorlib-light-grey siteBackground">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 offset-md-3 text-center colorlib-heading animate-box">
@@ -82,12 +82,12 @@
 					</div>
 					<span class="desc text-center">
 						<%# <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p> %>
-						<h2><%=dest.top.title[lng]%></h2>
+						<h2><%=dest.top.title[locale]%></h2>
 						<% if(dest.tour.name === 'historical-cultural'){%>
-							<span class="price">Սկսած <%=dest.top.prices[11].price%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
+							<span class="price"><%= __('Price From') + ' ' + dest.top.prices[11].price%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
 						<%}%>
 						<% if(dest.tour.name === 'gastronomic'){%>
-							<span class="price">Սկսած <%=dest.top.prices.guide[4]%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
+							<span class="price"><%= __('Price From') + ' ' + dest.top.prices.guide[4]%> <img width="15px" height="15px" class="darm_icon" src="/images/dram.png"></span>
 
 						<%}%>
 						<% if(dest.tour.name === 'historical_cultural'){%>

@@ -293,7 +293,7 @@
 //CHANGE LANGUAGE 
 	$('.language').on('click', function (e) {
 		let lang = $(this).attr('lng')
-		document.cookie = `lng=${lang}`
+		document.cookie = `lng=${lang};path=/`
 		location.reload()
 	})
 
@@ -332,3 +332,12 @@
 		})
 		
 	})
+	// var current = location.pathname;
+	// console.log(current)
+	// let links = $('.link-3')
+	// links.each( elem => {
+	// 	if($(links[elem]).attr('href') === current){
+	// 		$(links[elem]).addClass('activeMenu')
+	// 	}
+
+	// })
