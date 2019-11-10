@@ -11,12 +11,12 @@ const mongoose = require('mongoose')
 const tourRouter = require( './routes/tours')
 const indexRouter = require( './routes/index')
 const app = express()
-const port = (process.env.PORT || 3000)
-const uri = process.env.MONGO_URL || "mongodb+srv://arshavir:9mywhJTYX48nVVk@cluster0-lokck.mongodb.net/travel?retryWrites=true&w=majority"
-mongoose.connect(uri, { useNewUrlParser: true } )
 dotenv.config()
 
-//
+const port = process.env.PORT
+const uri = process.env.MONGO_URL
+mongoose.connect(uri, { useNewUrlParser: true } )
+
 app.use(session({ cookie: { maxAge: 2000 }, 
   secret: 'woot',
   resave: false, 
