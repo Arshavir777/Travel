@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5d13e0111c9d440000bc5d00"},"title":{"en":"Historical Cultural","am":"Պատմամշակութային","ru":"Историко-культурный"},"name":"historical-cultural","ID":1}
+{"_id":{"$oid":"5d1f81991c9d44000087962c"},"title":{"am":"Գաստրոնոմիկ","en":"Gastronomic","ru":"Гастрономический "},"name":"gastronomic","ID":2}
+{"_id":{"$oid":"5d2a000a1c9d440000ea013e"},"name":"bujakan","title":{"am":"Բուժական","en":"Therapeutic","ru":"Целебный"},"ID":3}
+{"_id":{"$oid":"5d2a03b11c9d440000ea013f"},"name":"adventure","title":{"am":"Արկածային","en":"Adventure","ru":"Приключение "},"ID":4}

@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5d2a370a1c9d440000a16ed0"},"name":"ziplayn","title":{"am":"Զիփլայն","en":"Zipline","ru":"ЗИПЛАЙН"},"tour_id":4,"ID":1,"single":false,"image":"dilijan_zip.jpg"}
+{"_id":{"$oid":"5d2a555c1c9d440000a27480"},"name":"chopanuxi","title":{"am":"Ճոպանուղի","en":"Chopanuxi","ru":"КАНАТНАЯ ДОРОГА"},"tour_id":4,"ID":2,"single":false,"image":"tatev_chopanuxi.jpg"}
+{"_id":{"$oid":"5d2a58611c9d440000a27481"},"name":"jeep_tour","title":{"am":"Ջիպ ","en":"Jeep","ru":"ДЖИП ТУР"},"tour_id":4,"ID":3,"single":true,"image":"jeep.jpg"}
+{"_id":{"$oid":"5d2a5bc01c9d440000a27482"},"name":"jermuk_shaqi","title":{"am":"Ջրվեժ ","en":"WATERFALL","ru":"ВОДОПАДЫ"},"tour_id":4,"ID":4,"single":true,"image":"jermuk_shaqi.jpg"}
+{"_id":{"$oid":"5d2a5e681c9d440000a27483"},"name":"rafting","title":{"am":"Ռաֆթինգ","en":"Rafting","ru":"РАФТИНГ"},"tour_id":4,"ID":5,"single":true,"image":"raftign.jpg"}
+{"_id":{"$oid":"5d2a61de1c9d440000a27484"},"name":"9in1","title":{"am":"Յելլ Էքսթրիմ Պարկ (9 in 1)  ","en":"YELL EXTREME PARK","ru":"YELL EXTREME PARK"},"tour_id":4,"ID":6,"single":true,"image":"9in1.jpg"}
